@@ -33,7 +33,7 @@ Workflow `.github/workflows/deploy-pages.yml` sẽ tự build và publish khi pu
 Trước lần push đầu tiên, thêm GitHub repository secret `VITE_API_URL` với URL backend Render, ví dụ:
 `https://gia-su-toan-8-api.onrender.com`
 
-Trong GitHub repo → Settings → Pages, chọn source `Deploy from a branch`, branch `gh-pages`, folder `/ (root)`.
+Trong GitHub repo → Settings → Pages, chọn source `GitHub Actions`.
 
 ## Deploy backend cho public
 
