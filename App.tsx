@@ -187,7 +187,14 @@ const App: React.FC = () => {
       
       setMessages(prev => [...prev, initialAiMessage]);
 
-      const stream = await sendMessageStream(text, imagesToSend);
+      const history = [...(clearHistory ? [] : messages), userMessage]
+        .filter(msg => msg.text.trim() && !msg.isError && msg.id !== aiMessageId)
+        .slice(-12)
+        .map(msg => ({
+          role: msg.sender === Sender.USER ? 'user' as const : 'assistant' as const,
+          content: msg.text,
+        }));
+      const stream = await sendMessageStream(text, imagesToSend, history);
       
       let fullText = '';
       for await (const chunk of stream) {

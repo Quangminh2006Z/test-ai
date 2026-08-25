@@ -13,7 +13,16 @@ const getApiBaseUrl = (): string => {
   return configured.replace(/\/$/, '');
 };
 
-export const sendMessageStream = async (message: string, images?: string[]): Promise<AsyncIterable<string>> => {
+export interface ChatHistoryItem {
+  role: 'user' | 'assistant';
+  content: string;
+}
+
+export const sendMessageStream = async (
+  message: string,
+  images?: string[],
+  history: ChatHistoryItem[] = []
+): Promise<AsyncIterable<string>> => {
   const baseUrl = getApiBaseUrl();
 
   const response = await fetch(`${baseUrl}/api/chat`, {
@@ -24,6 +33,7 @@ export const sendMessageStream = async (message: string, images?: string[]): Pro
     body: JSON.stringify({
       message,
       images: images || [],
+      history,
     }),
   });
 

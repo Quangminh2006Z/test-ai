@@ -35,14 +35,14 @@ app.get('/api/health', (req, res) => {
 
 app.post('/api/chat', async (req, res) => {
   try {
-    const { message = '', images = [] } = req.body || {};
+    const { message = '', images = [], history = [] } = req.body || {};
     const apiKey = getOpenRouterKey();
 
     if (!apiKey) {
       return res.status(500).json({ error: 'Missing OPENROUTER_API_KEY in server environment' });
     }
 
-    const systemPrompt = `Bạn là giáo viên Toán lớp 8, giảng dạy bằng tiếng Việt, rõ ràng, ngắn gọn, dễ hiểu.\n\nYêu cầu bắt buộc:\n- Chỉ hướng dẫn, không làm hộ bài cho học sinh.\n- Trả lời theo đúng cấu trúc: Khái niệm, ví dụ, cách làm, đáp án, gợi ý luyện tập.\n- Không viết lạc đề, không bừa bãi, không lặp lại.\n- Nếu có ký hiệu toán học, hãy dùng LaTeX sạch, đúng dạng.\n- Không dùng dạng văn bản rời rạc.\n\nCâu hỏi của học sinh: ${message}`;
+    const systemPrompt = `Bạn là giáo viên Toán lớp 8, giảng dạy bằng tiếng Việt, rõ ràng, ngắn gọn, dễ hiểu.\n\nYêu cầu bắt buộc:\n- Chỉ hướng dẫn, không làm hộ bài cho học sinh.\n- Trả lời theo đúng cấu trúc: Khái niệm, ví dụ, cách làm, đáp án, gợi ý luyện tập.\n- Duy trì mạch hội thoại và dùng thông tin từ các lượt trước khi phù hợp.\n- Không viết lạc đề, không bừa bãi, không lặp lại.\n- Nếu có ký hiệu toán học, hãy dùng LaTeX sạch, đúng dạng.\n- Không dùng dạng văn bản rời rạc.`;
 
     const imageContents = images.map((image) => {
       parseDataUri(image);
@@ -55,11 +55,19 @@ app.post('/api/chat', async (req, res) => {
       { type: 'text', text: message || 'Hãy đọc và hướng dẫn bài tập trong ảnh.' },
       ...imageContents,
     ];
+    const safeHistory = Array.isArray(history)
+      ? history.filter(item =>
+          (item?.role === 'user' || item?.role === 'assistant') &&
+          typeof item?.content === 'string' &&
+          item.content.trim()
+        ).slice(-12)
+      : [];
 
     const payload = {
       model: images.length > 0 ? 'minimax/minimax-m3:free' : 'minimax/minimax-m2.7:free',
       messages: [
         { role: 'system', content: systemPrompt },
+        ...safeHistory.slice(0, -1),
         { role: 'user', content: images.length > 0 ? userContent : message }
       ],
       stream: true,
