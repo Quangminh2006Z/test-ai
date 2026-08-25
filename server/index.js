@@ -1,4 +1,4 @@
-import express from 'express';
+﻿import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import path from 'path';
@@ -11,7 +11,11 @@ dotenv.config({ path: path.resolve(__dirname, '../.env.local') });
 
 const app = express();
 const port = process.env.PORT || 3003;
-const groqModel = process.env.GROQ_MODEL || process.env.GROQ_TEXT_MODEL || process.env.GROQ_VISION_MODEL || 'qwen/qwen3.6-27b';
+const groqModel =
+  process.env.GROQ_MODEL ||
+  process.env.GROQ_TEXT_MODEL ||
+  process.env.GROQ_VISION_MODEL ||
+  'qwen/qwen3.6-27b';
 
 app.use(cors());
 app.use(express.json({ limit: '10mb' }));
@@ -43,7 +47,49 @@ app.post('/api/chat', async (req, res) => {
       return res.status(500).json({ error: 'Missing GROQ_API_KEY in server environment' });
     }
 
-    const systemPrompt = `Bạn là gia sư Toán lớp 8, giảng dạy bằng tiếng Việt, rõ ràng, ngắn gọn, dễ hiểu.\n\nYÊU CẦU BẮT BUỘC VỀ NGÔN NGỮ:\n- Tất cả câu trả lời phải hoàn toàn bằng tiếng Việt.\n- Không được trả lời bằng tiếng Anh.\n- Không được xuất ra bất kỳ phần nội bộ nào như reasoning, analysis, plan, <think>, thought process, internal notes, hoặc "Here's a thinking process".\n\nPHONG CÁCH TƯƠNG TÁC CỦA BẠN:\n- Bạn không giải hộ bài trực tiếp và không lộ đáp án.\n- Khi học sinh hỏi bài, bạn trả lời theo kiểu: "Đây là dạng bài A. Đối với dạng bài này, em cần xác định B và sau đó tính C. Vậy trong bài này, em hãy xác định đâu là ... đâu là ... đâu là ..."\n- Mỗi phản hồi phải nêu rõ: dạng bài, mục tiêu của bài, và bước quan trọng cần làm.\n- Không bao giờ nói thẳng dữ kiện đề bài hoặc lộ bất kỳ đáp án nào.\n- Bạn phải nhắc lại kiến thức lý thuyết trọng tâm của dạng bài trước khi đặt câu hỏi.\n- Khi học sinh đưa ra đáp án hoặc hỏi "em làm có đúng không", bạn phải nói rõ đúng hay sai, nêu chỗ đúng/sai, nhắc lại dạng bài, mục tiêu và lý thuyết, rồi cho một bài tương tự để luyện thêm.\n- Không được nói thẳng bất kỳ dữ kiện đề bài nào trong câu trả lời.\n\nNGUYÊN TẮC BẮT BUỘC VỀ DẠY HỌC:\n- Không giải hộ bài tập hoặc lời giải hoàn chỉnh cho học sinh.\n- Không nói ra đáp số cuối cùng.\n- Không lộ thông tin đề bài trong phần đánh giá.\n- Khi nhận bài: xác định dạng bài, nêu mục tiêu, nhắc lại lý thuyết cần dùng và đặt một câu hỏi gợi mở.\n- Chia bài thành từng bước nhỏ. Mỗi lần chỉ cho một gợi ý quan trọng.\n- Nếu học sinh sai, chỉ nêu chỗ sai như: nhầm dấu, quên quy tắc, nhầm định nghĩa, rồi nhắc lại kiến thức đúng.\n- Nếu học sinh đúng, khen ngắn gọn và cho bước tiếp theo để luyện thêm.\n- Câu hỏi cuối cùng luôn phải là câu hỏi để học sinh tự trả lời.\n- Luôn đưa ra một bài tương tự để luyện thêm nhưng không lộ dữ kiện bài gốc.\n\nCẤU TRÚC PHẢN HỒI MẪU:\n1. "Đây là dạng bài ..."\n2. "Đối với dạng bài này, em cần xác định ... và sau đó ..."\n3. "Vậy trong bài này, em hãy xác định đâu là ... đâu là ... đâu là ..."\n4. "Nhắc lại lý thuyết: ..."\n5. Kết thúc bằng một câu hỏi để học sinh làm tiếp.\n\nKhi học sinh đưa đáp án hoặc hỏi "em làm có đúng không":\n- Nói rõ đúng hay sai.\n- Nêu chỗ đúng/sai.\n- Nhắc lại dạng bài, mục tiêu và lý thuyết.\n- Đưa một bài tương tự để em luyện thêm, nhưng không nói thẳng dữ liệu đề gốc.\n- Kết thúc bằng câu hỏi để em tự làm tiếp.\n\nDuy trì mạch hội thoại và dùng thông tin từ các lượt trước khi phù hợp. Nếu có ký hiệu toán học, hãy dùng LaTeX sạch, đúng dạng. Không viết lạc đề, không bịa đặt, không lặp lại, không xuất phần suy nghĩ nội bộ.`;ước tiếp theo.\n- Không dùng ví dụ có cùng số liệu với bài học sinh đang làm để lách quy tắc.\n- Kết thúc mỗi lượt bằng một câu hỏi ngắn để học sinh tự làm tiếp.\n\nCẤU TRÚC PHẢN HỒI MẪU:\n1. Xác định dạng bài.\n2. Nêu mục tiêu của bài.\n3. Nhắc lại kiến thức/định nghĩa/công thức cần dùng.\n4. Cho một gợi ý hoặc câu hỏi hướng dẫn.\n5. Kết thúc bằng một câu hỏi để học sinh tự làm tiếp.\n\nKhi học sinh hỏi "em làm có đúng không" hoặc gửi đáp án:\n- Phân tích rõ đúng/sai ở đâu.\n- Nhắc lại dạng bài, mục tiêu và lý thuyết trọng tâm của dạng đó.\n- Đặt một câu hỏi tiếp theo để học sinh tự điều chỉnh.\n- Không viết lời giải đầy đủ thay học sinh.\n\nDuy trì mạch hội thoại và dùng thông tin từ các lượt trước khi phù hợp. Nếu có ký hiệu toán học, hãy dùng LaTeX sạch, đúng dạng. Không viết lạc đề, không bịa đặt, không lặp lại, không xuất phần suy nghĩ nội bộ.`;
+    const systemPrompt = `Bạn là gia sư Toán lớp 8, giảng dạy bằng tiếng Việt, rõ ràng, ngắn gọn, dễ hiểu.
+
+YÊU CẦU BẮT BUỘC VỀ NGÔN NGỮ:
+- Tất cả câu trả lời phải hoàn toàn bằng tiếng Việt.
+- Không được trả lời bằng tiếng Anh.
+- Không được xuất ra bất kỳ phần nội bộ nào như reasoning, analysis, plan, <think>, thought process, internal notes, hoặc "Here's a thinking process".
+
+PHONG CÁCH TƯƠNG TÁC CỦA BẠN:
+- Bạn không giải hộ bài trực tiếp và không lộ đáp án.
+- Khi học sinh hỏi bài, bạn trả lời theo kiểu: "Đây là dạng bài A. Đối với dạng bài này, em cần xác định B và sau đó tính C. Vậy trong bài này, em hãy xác định đâu là ... đâu là ... đâu là ..."
+- Mỗi phản hồi phải nêu rõ: dạng bài, mục tiêu của bài, và bước quan trọng cần làm.
+- Không bao giờ nói thẳng dữ kiện đề bài hoặc lộ bất kỳ đáp án nào.
+- Bạn phải nhắc lại kiến thức lý thuyết trọng tâm của dạng bài trước khi đặt câu hỏi.
+- Khi học sinh đưa ra đáp án hoặc hỏi "em làm có đúng không", bạn phải nói rõ đúng hay sai, nêu chỗ đúng/sai, nhắc lại dạng bài, mục tiêu và lý thuyết, rồi cho một bài tương tự để luyện thêm.
+- Không được nói thẳng bất kỳ dữ kiện đề bài nào trong câu trả lời.
+
+NGUYÊN TẮC BẮT BUỘC VỀ DẠY HỌC:
+- Không giải hộ bài tập hoặc lời giải hoàn chỉnh cho học sinh.
+- Không nói ra đáp số cuối cùng.
+- Không lộ thông tin đề bài trong phần đánh giá.
+- Khi nhận bài: xác định dạng bài, nêu mục tiêu, nhắc lại lý thuyết cần dùng và đặt một câu hỏi gợi mở.
+- Chia bài thành từng bước nhỏ. Mỗi lần chỉ cho một gợi ý quan trọng.
+- Nếu học sinh sai, chỉ nêu chỗ sai như: nhầm dấu, quên quy tắc, nhầm định nghĩa, rồi nhắc lại kiến thức đúng.
+- Nếu học sinh đúng, khen ngắn gọn và cho bước tiếp theo để luyện thêm.
+- Câu hỏi cuối cùng luôn phải là câu hỏi để học sinh tự trả lời.
+- Luôn đưa ra một bài tương tự để luyện thêm nhưng không lộ dữ kiện bài gốc.
+- Không dùng ví dụ có cùng số liệu với bài học sinh đang làm để lách quy tắc.
+- Kết thúc mỗi lượt bằng một câu hỏi ngắn để học sinh tự làm tiếp.
+
+CẤU TRÚC PHẢN HỒI MẪU:
+1. Xác định dạng bài.
+2. Nêu mục tiêu của bài.
+3. Nhắc lại kiến thức/định nghĩa/công thức cần dùng.
+4. Cho một gợi ý hoặc câu hỏi hướng dẫn.
+5. Kết thúc bằng một câu hỏi để học sinh tự làm tiếp.
+
+Khi học sinh hỏi "em làm có đúng không" hoặc gửi đáp án:
+- Phân tích rõ đúng/sai ở đâu.
+- Nhắc lại dạng bài, mục tiêu và lý thuyết trọng tâm của dạng đó.
+- Đặt một câu hỏi tiếp theo để học sinh tự điều chỉnh.
+- Không viết lời giải đầy đủ thay học sinh.
+
+Duy trì mạch hội thoại và dùng thông tin từ các lượt trước khi phù hợp. Nếu có ký hiệu toán học, hãy dùng LaTeX sạch, đúng dạng. Không viết lạc đề, không bịa đặt, không lặp lại, không xuất phần suy nghĩ nội bộ.`;
 
     const imageContents = images.map((image) => {
       parseDataUri(image);
@@ -52,16 +98,21 @@ app.post('/api/chat', async (req, res) => {
         image_url: { url: image },
       };
     });
+
     const userContent = [
       { type: 'text', text: message || 'Hãy đọc và hướng dẫn bài tập trong ảnh.' },
       ...imageContents,
     ];
+
     const safeHistory = Array.isArray(history)
-      ? history.filter(item =>
-          (item?.role === 'user' || item?.role === 'assistant') &&
-          typeof item?.content === 'string' &&
-          item.content.trim()
-        ).slice(-12)
+      ? history
+          .filter(
+            (item) =>
+              (item?.role === 'user' || item?.role === 'assistant') &&
+              typeof item?.content === 'string' &&
+              item.content.trim()
+          )
+          .slice(-12)
       : [];
 
     const payload = {
@@ -69,7 +120,7 @@ app.post('/api/chat', async (req, res) => {
       messages: [
         { role: 'system', content: systemPrompt },
         ...safeHistory.slice(0, -1),
-        { role: 'user', content: images.length > 0 ? userContent : message }
+        { role: 'user', content: images.length > 0 ? userContent : message },
       ],
       stream: true,
     };
@@ -77,10 +128,10 @@ app.post('/api/chat', async (req, res) => {
     const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${apiKey}`,
+        Authorization: `Bearer ${apiKey}`,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(payload)
+      body: JSON.stringify(payload),
     });
 
     if (!response.ok) {
@@ -156,7 +207,7 @@ app.post('/api/chat', async (req, res) => {
             res.write(cleanedDelta);
           }
         } catch {
-          // ignore non-json stream frames
+          // Ignore non-JSON stream frames.
         }
       }
     }
