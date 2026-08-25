@@ -5,5 +5,5 @@ services:
     buildCommand: npm ci
     startCommand: node server/index.js
     envVars:
-      - key: OPENROUTER_API_KEY
+      - key: GROQ_API_KEY
         sync: false

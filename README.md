@@ -7,7 +7,7 @@
 Ứng dụng học toán lớp 8 với trợ lý AI. Dự án được thiết kế theo mô hình public-safe:
 - Frontend chạy trên GitHub Pages
 - AI request được proxy qua backend riêng
-- API key OpenRouter được giữ ở server, không lộ trên browser
+- API key Groq được giữ ở server, không lộ trên browser
 
 ## Chạy local
 
@@ -15,9 +15,9 @@ Yêu cầu: Node.js
 
 1. Cài đặt dependency:
    `npm install`
-2. Cập nhật file [.env.local](.env.local) với key OpenRouter:
+2. Cập nhật file [.env.local](.env.local) với key Groq:
    ```env
-   OPENROUTER_API_KEY=your_key_here
+   GROQ_API_KEY=your_key_here
    PORT=3003
    VITE_API_URL=http://localhost:3003
    ```
@@ -44,7 +44,7 @@ Vì GitHub Pages là frontend tĩnh, backend cần chạy trên dịch vụ có 
 - Vercel
 - Azure App Service
 
-Khi tạo Web Service trên Render, đặt biến môi trường `OPENROUTER_API_KEY` bằng key OpenRouter.
+Khi tạo Web Service trên Render, đặt biến môi trường `GROQ_API_KEY` bằng key Groq.
 Sau khi backend public chạy, dùng URL đó làm giá trị GitHub secret `VITE_API_URL`.
 
-Lưu ý: `OPENROUTER_API_KEY` chỉ được đặt ở server, không được để trong frontend.
+Lưu ý: `GROQ_API_KEY` chỉ được đặt ở server, không được để trong frontend.
