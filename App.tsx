@@ -125,6 +125,20 @@ const App: React.FC = () => {
     setSelectedImages(prev => prev.filter((_, index) => index !== indexToRemove));
   };
 
+  const handleNewChat = () => {
+    resetChat();
+    setMessages([{
+      id: `welcome-${Date.now()}`,
+      text: "Chào em! Thầy là giáo viên Toán lớp 8 đây. Hôm nay em muốn học phần nào? 🌱\n\nEm hãy chọn một chủ đề ở danh mục bên trái hoặc nhập câu hỏi để bắt đầu nhé!",
+      sender: Sender.AI,
+      timestamp: new Date()
+    }]);
+    setInputText('');
+    setSelectedImages([]);
+    setCurrentTopicId(null);
+    setIsSidebarOpen(false);
+  };
+
   const handleSendMessage = async (text: string, clearHistory: boolean = false) => {
     if (apiKeyError) {
       setMessages(prev => [...prev, {
@@ -255,9 +269,19 @@ const App: React.FC = () => {
 
               <div className="mt-4 px-2">
                 <button
+                  onClick={handleNewChat}
+                  disabled={isLoading}
+                  className="w-full flex items-center justify-center gap-2 px-3 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold shadow-sm transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  title="Bắt đầu một đoạn chat mới"
+                >
+                  <span className="text-base">＋</span>
+                  <span>Thêm đoạn chat mới</span>
+                </button>
+
+                <button
                   onClick={() => setIsExportModalOpen(true)}
                   disabled={messages.length === 0}
-                  className="w-full flex items-center justify-center gap-2 px-3 py-2.5 rounded-xl bg-white hover:bg-indigo-50 border border-slate-200 hover:border-indigo-300 text-slate-700 hover:text-indigo-700 text-sm font-semibold shadow-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed group"
+                  className="mt-2 w-full flex items-center justify-center gap-2 px-3 py-2.5 rounded-xl bg-white hover:bg-indigo-50 border border-slate-200 hover:border-indigo-300 text-slate-700 hover:text-indigo-700 text-sm font-semibold shadow-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed group"
                   title="Lưu lại toàn bộ đoạn chat để nộp lên Google Drive"
                 >
                   <span className="text-base group-hover:scale-110 transition-transform">💾</span>
