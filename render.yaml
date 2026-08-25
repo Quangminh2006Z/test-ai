@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: gia-su-toan-8-api
+    runtime: node
+    buildCommand: npm ci
+    startCommand: node server/index.js
+    envVars:
+      - key: OPENROUTER_API_KEY
+        sync: false

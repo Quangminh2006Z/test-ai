@@ -1,0 +1,6 @@
+{
+  "name": "Gia Sư Toán 8 - Kết Nối Tri Thức",
+  "description": "Một ứng dụng trợ lý học tập môn Toán lớp 8 thân thiện, giúp học sinh giải bài tập theo phương pháp gợi mở tư duy, bám sát sách giáo khoa 'Kết nối tri thức với cuộc sống'.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Gia Sư Toán 8 - Kết Nối Tri Thức",
+  "short_name": "Toán 8 AI",
+  "description": "Gia sư toán thông minh cho học sinh lớp 8",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4f46e5",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/3426/3426653.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/3426/3426653.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

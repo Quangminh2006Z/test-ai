@@ -1,0 +1,467 @@
+[
+  {
+    "id": 0,
+    "author": "user",
+    "payload": {
+      "type": "text",
+      "text": "Bạn là một giáo viên Toán lớp 8 thân thiện, dễ thương, đang giảng dạy theo sách giáo khoa \n“TOÁN 8 – KẾT NỐI TRI THỨC VỚI CUỘC SỐNG”.\n\nNHIỆM VỤ CHÍNH:\n- Hướng dẫn học sinh giải bài tập bằng cách GỢI MỞ, DẪN DẮT TƯ DUY.\n- KHÔNG đưa ra đáp án ngay lập tức.\n- KHÔNG giải trọn vẹn bài toán nếu học sinh chưa tự suy nghĩ.\n\nPHẠM VI KIẾN THỨC:\n- Chương 1: Đa thức\n  + Đơn thức, đa thức\n  + Bậc của đa thức\n  + Cộng – trừ đa thức\n  + Nhân đơn thức với đa thức\n- Chương 2: Phân thức đại số\n  + Điều kiện xác định\n  + Rút gọn phân thức\n  + Quy đồng mẫu thức\n  + Cộng – trừ phân thức\n\nPHONG CÁCH GIẢNG DẠY:\n- Xưng hô: “Thầy/Cô – em”.\n- Ngôn ngữ:\n  + Gần gũi, nhẹ nhàng, động viên.\n  + Phù hợp với học sinh lớp 8.\n  + Không dùng thuật ngữ quá hàn lâm nếu không cần thiết.\n- Luôn khuyến khích học sinh thử suy nghĩ trước khi làm tiếp.\n\nNGUYÊN TẮC GỢI Ý:\n- Chỉ đưa ra:\n  + Câu hỏi dẫn dắt\n  + Nhắc lại kiến thức liên quan\n  + Gợi ý từng bước nhỏ\n- Ví dụ:\n  + “Em thấy các hạng tử nào giống nhau không?”\n  + “Mẫu thức này có thể bằng 0 không nhỉ?”\n  + “Em thử tách đa thức này ra xem sao?”\n\nĐÁP ÁN:\n- KHÔNG đưa ra đáp án cuối cùng ngay.\n- Chỉ được đưa đáp án khi:\n  + Học sinh đã thử giải nhưng sai.\n  + HOẶC học sinh yêu cầu rõ ràng ít nhất 2 lần (ví dụ: “Thầy cho đáp án đi ạ”).\n- Khi đưa đáp án:\n  + Trình bày ngắn gọn\n  + Giải thích rõ lý do, không chỉ nêu kết quả.\n\nTƯƠNG TÁC VỚI HỌC SINH:\n- Nếu học sinh trả lời sai:\n  + Không nói “sai rồi”.\n  + Dùng các cách nói tích cực như:\n    * “Ý này gần đúng rồi nè…”\n    * “Em thử xem lại chỗ này một chút nhé.”\n- Nếu học sinh bỏ cuộc:\n  + Chia bài toán thành bước nhỏ hơn.\n  + Gợi ý lại từ kiến thức nền.\n\nYẾU TỐ VUI HỌC:\n- Có thể dùng emoji nhẹ nhàng (⭐ 🌱 😊) nhưng không quá nhiều.\n- Có thể khen ngợi khi học sinh làm đúng hoặc có tiến bộ.\n\nMỤC TIÊU CUỐI CÙNG:\n- Giúp học sinh HIỂU CÁCH LÀM, không chỉ ra KẾT QUẢ.\n- Hình thành thói quen suy luận và tự học Toán.",
+      "files": [],
+      "fileUploads": [],
+      "cMarkNode": {}
+    },
+    "createdTimestamp": {
+      "seconds": 1769853247,
+      "nanos": 728000000
+    }
+  },
+  {
+    "id": 1,
+    "author": "model",
+    "payload": {
+      "type": "thinking",
+      "text": "**Defining the Persona**\n\nI'm currently focused on defining the persona: a friendly, approachable 8th-grade Vietnamese math teacher. The primary goal for this persona is to guide students through the \"Kết nối tri thức với cuộc sống\" textbook.\n\n\n**Refining the Approach**\n\nI'm now refining the interaction approach, focusing on guiding students through math problems via scaffolding. I'm prioritizing leading questions and hints, with a strict rule of never giving immediate answers. The style will be encouraging and gentle, using respectful Vietnamese terms and a touch of emojis. I'm also planning the core tech stack: React, TypeScript, Tailwind CSS, and the Google Gemini API.\n\n\n**Constructing the System Prompt**\n\nI'm currently drafting the system instructions, defining the role, curriculum, behavior, and tone for the persona. I've specified scaffolding as the primary interaction method, and defined tone, including respectful Vietnamese terms, and a set of strict rules. I've also clarified the answer-giving rules to ensure scaffolding is prioritized.\n\\n\\n\n**Outlining the Tech Stack**\n\nI am now focusing on the components of the program. I've just outlined the fundamental components I'll need, including the main layout (`App.tsx`), the chat interface (`components/ChatInterface.tsx`), a sidebar (`components/Sidebar.tsx` which is optional), and a math renderer (`components/MathRenderer.tsx`). I intend to rely on Gemini's Markdown capabilities for math rendering to simplify things.\n\n\n**Confirming the Library Choice**\n\nI've decided to stick with `react-markdown`, which fits the project's constraints perfectly. This is a safe and popular choice. I am confident in its ability to handle text formatting and basic math rendering. I will be incorporating it into the project now, along with the other chosen components. I've also just built the file `services/geminiService.ts` for handling API calls.\n\n\n**Implementing Chat History**\n\nI'm now focusing on implementing chat history to maintain conversation context, which involves creating the necessary storage mechanisms. I'll need to persist the chat logs to ensure a seamless experience. I'll be working on this shortly.\n\n\\n\\n\n**Developing Core Components**\n\nI'm focusing on core code construction. I've broken down the project into files, including `metadata.json`, `index.html`, `index.tsx`, `App.tsx`, `services/gemini.ts`, and `types.ts`, and I'm fleshing out each one step by step. I'm prioritizing the `App.tsx` component, including states for messages, loading, and topic, along with sidebar and chat area logic.\n\n\n**Defining the Role**\n\nI'm now refining the persona's communication style. I'm focusing on incorporating Vietnamese terms like \"Thầy/Cô\" and \"em,\" and I am also including emojis for a friendly, approachable tone. I've re-reviewed and refined the rule-set, emphasizing guided, step-by-step assistance and praising student effort. My goal is to prevent direct answers. The new rules also suggest using plain text math, and standard markdown for formulas. Finally, the project's logic is being tested for topic handling.\n\n\n**Refining the Interaction**\n\nI'm now determining the most effective method for topic handling. I've decided to initialize the chat with the system instruction. I'll include a way to trigger the topic with a specific message \"Em muốn ôn tập về [Topic]\" if the user asks. This strategy allows for a more natural flow and easier conversation management. The aim is to ensure the user's focus is on the content.\n\n\n**Prioritizing API Integration**\n\nI'm now integrating the Gemini API, focusing on using `gemini-3-flash-preview` for faster responses, paired with `sendMessageStream`. I'm also double-checking the \"Answer\" rule in the system prompt to ensure it's strictly enforced. I'm also making sure I am using `react-markdown` to render the bot's responses.\n\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": {
+      "seconds": 1769853247,
+      "nanos": 728000000
+    },
+    "doneTimestamp": {
+      "seconds": 1769853272,
+      "nanos": 834000000
+    }
+  },
+  {
+    "id": 2,
+    "author": "model",
+    "payload": {
+      "type": "generationTable",
+      "entries": [
+        {
+          "path": "metadata.json",
+          "generationType": 0,
+          "isDone": true,
+          "description": "App metadata",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "{\n  \"name\": \"Gia Sư Toán 8 - Kết Nối Tri Thức\",\n  \"description\": \"Một ứng dụng trợ lý học tập môn Toán lớp 8 thân thiện, giúp học sinh giải bài tập theo phương pháp gợi mở tư duy, bám sát sách giáo khoa 'Kết nối tri thức với cuộc sống'.\"\n}"
+            }
+          ]
+        },
+        {
+          "path": "types.ts",
+          "generationType": 0,
+          "isDone": true,
+          "description": "TypeScript definitions for chat and state",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "export enum Sender {\n  USER = 'user',\n  AI = 'model'\n}\n\nexport interface Message {\n  id: string;\n  text: string;\n  sender: Sender;\n  timestamp: Date;\n  isError?: boolean;\n}\n\nexport interface Topic {\n  id: string;\n  title: string;\n  description: string;\n  promptTrigger: string;\n  icon: string;\n}\n\nexport interface ChatState {\n  messages: Message[];\n  isLoading: boolean;\n  currentTopicId: string | null;\n}"
+            }
+          ]
+        },
+        {
+          "path": "constants.ts",
+          "generationType": 0,
+          "isDone": true,
+          "description": "System instructions and topic definitions",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "import { Topic } from './types';\n\nexport const SYSTEM_INSTRUCTION = `\nBạn là một giáo viên Toán lớp 8 thân thiện, dễ thương, tên là \"Thầy Giáo AI\", đang giảng dạy theo sách giáo khoa \"TOÁN 8 – KẾT NỐI TRI THỨC VỚI CUỘC SỐNG\".\n\nNHIỆM VỤ CỐT LÕI:\n- Hướng dẫn học sinh giải bài tập bằng cách GỢI MỞ, DẪN DẮT TƯ DUY.\n- TUYỆT ĐỐI KHÔNG đưa ra đáp án hoặc lời giải chi tiết ngay lập tức.\n- KHÔNG giải trọn vẹn bài toán nếu học sinh chưa tự suy nghĩ và đưa ra ý kiến.\n\nPHẠM VI KIẾN THỨC (Chỉ tập trung vào các nội dung này):\n1. Chương 1: Đa thức (Đơn thức, đa thức, cộng trừ nhân chia đa thức).\n2. Chương 2: Phân thức đại số (Rút gọn, quy đồng, cộng trừ phân thức).\n\nPHONG CÁCH GIAO TIẾP:\n- Xưng hô: \"Thầy\" – \"em\".\n- Ngôn ngữ: Gần gũi, nhẹ nhàng, động viên, không dùng từ ngữ quá hàn lâm.\n- Sử dụng emoji nhẹ nhàng (⭐, 🌱, 😊, ✏️) để tạo không khí vui vẻ.\n\nQUY TRÌNH HƯỚNG DẪN (SCAFFOLDING):\n1. Khi nhận câu hỏi, hãy khen ngợi hoặc ghi nhận câu hỏi của học sinh.\n2. Đưa ra câu hỏi gợi ý bước đầu tiên (Ví dụ: \"Em nhìn thấy các hạng tử này có chung gì không?\", \"Để cộng hai phân thức này, ta cần làm gì với mẫu số trước nhỉ?\").\n3. Chờ học sinh trả lời.\n   - Nếu đúng: Khen ngợi và gợi ý bước tiếp theo.\n   - Nếu sai: Động viên (\"Gần đúng rồi\", \"Thử nghĩ lại xem...\") và đưa ra gợi ý rõ hơn một chút.\n   - Nếu học sinh bí: Chia nhỏ vấn đề hơn nữa.\n\nQUY TẮC VỀ ĐÁP ÁN:\n- Chỉ đưa ra đáp án cuối cùng khi:\n  1. Học sinh đã thử làm sai ít nhất 2 lần sau khi được gợi ý.\n  2. HOẶC học sinh yêu cầu đáp án rõ ràng ít nhất 2 lần (VD: \"Thầy cho em đáp án đi\").\n- Khi đưa đáp án: Giải thích ngắn gọn lý do.\n\nĐỊNH DẠNG TOÁN HỌC:\n- Hãy viết các biểu thức toán học rõ ràng, dễ đọc. Ví dụ: x^2, (x+1)/(x-2).\n- Có thể dùng xuống dòng để trình bày các bước tính toán cho thoáng mắt.\n`;\n\nexport const TOPICS: Topic[] = [\n  {\n    id: 'intro',\n    title: 'Làm quen',\n    description: 'Giới thiệu và trò chuyện',\n    promptTrigger: 'Chào thầy ạ, thầy có thể giúp gì cho em?',\n    icon: '👋'\n  },\n  {\n    id: 'poly_basic',\n    title: 'Đa thức cơ bản',\n    description: 'Đơn thức, bậc, thu gọn đa thức',\n    promptTrigger: 'Thầy ơi, em muốn ôn tập về Đơn thức và Đa thức.',\n    icon: '📦'\n  },\n  {\n    id: 'poly_ops',\n    title: 'Phép tính Đa thức',\n    description: 'Cộng, trừ, nhân đa thức',\n    promptTrigger: 'Thầy hướng dẫn em về cộng trừ và nhân đa thức nhé.',\n    icon: '➕'\n  },\n  {\n    id: 'frac_basic',\n    title: 'Phân thức đại số',\n    description: 'Định nghĩa, điều kiện xác định',\n    promptTrigger: 'Em đang thắc mắc về Phân thức đại số và điều kiện xác định.',\n    icon: '➗'\n  },\n  {\n    id: 'frac_ops',\n    title: 'Cộng trừ phân thức',\n    description: 'Quy đồng và tính toán',\n    promptTrigger: 'Thầy giúp em cách quy đồng và cộng trừ phân thức với ạ.',\n    icon: '🔄'\n  }\n];\n"
+            }
+          ]
+        },
+        {
+          "path": "services/geminiService.ts",
+          "generationType": 0,
+          "isDone": true,
+          "description": "Service to interact with Google GenAI SDK",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "import { GoogleGenAI, Chat, GenerativeModel } from \"@google/genai\";\nimport { SYSTEM_INSTRUCTION } from \"../constants\";\n\nlet chatSession: Chat | null = null;\nlet genAI: GoogleGenAI | null = null;\n\nconst getClient = (): GoogleGenAI => {\n  if (!genAI) {\n    const apiKey = process.env.API_KEY;\n    if (!apiKey) {\n      throw new Error(\"API_KEY not found in environment variables\");\n    }\n    genAI = new GoogleGenAI({ apiKey });\n  }\n  return genAI;\n};\n\nexport const initializeChat = async (): Promise<Chat> => {\n  const ai = getClient();\n  \n  // Using gemini-3-flash-preview for fast, reasoning-capable interaction appropriate for tutoring\n  chatSession = ai.chats.create({\n    model: 'gemini-3-flash-preview',\n    config: {\n      systemInstruction: SYSTEM_INSTRUCTION,\n      temperature: 0.7, // Balance between creativity and strict instruction following\n      candidateCount: 1,\n    },\n  });\n\n  return chatSession;\n};\n\nexport const sendMessageStream = async (message: string): Promise<AsyncIterable<string>> => {\n  if (!chatSession) {\n    await initializeChat();\n  }\n\n  if (!chatSession) {\n    throw new Error(\"Failed to initialize chat session\");\n  }\n\n  try {\n    const result = await chatSession.sendMessageStream({ message });\n    \n    // Create a generator to yield text chunks\n    async function* streamGenerator() {\n      for await (const chunk of result) {\n         if (chunk.text) {\n             yield chunk.text;\n         }\n      }\n    }\n    \n    return streamGenerator();\n\n  } catch (error) {\n    console.error(\"Error sending message to Gemini:\", error);\n    throw error;\n  }\n};\n\nexport const resetChat = () => {\n  chatSession = null;\n};\n"
+            }
+          ]
+        },
+        {
+          "path": "components/Button.tsx",
+          "generationType": 0,
+          "isDone": true,
+          "description": "Reusable Button component",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "import React from 'react';\n\ninterface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {\n  variant?: 'primary' | 'secondary' | 'ghost';\n  size?: 'sm' | 'md' | 'lg';\n  isLoading?: boolean;\n}\n\nconst Button: React.FC<ButtonProps> = ({ \n  children, \n  className = '', \n  variant = 'primary', \n  size = 'md', \n  isLoading = false,\n  disabled,\n  ...props \n}) => {\n  const baseStyles = \"inline-flex items-center justify-center rounded-xl font-medium transition-all focus:outline-none focus:ring-2 focus:ring-offset-1 disabled:opacity-50 disabled:cursor-not-allowed\";\n  \n  const variants = {\n    primary: \"bg-indigo-600 text-white hover:bg-indigo-700 active:bg-indigo-800 shadow-sm shadow-indigo-200 focus:ring-indigo-500\",\n    secondary: \"bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 hover:border-slate-300 focus:ring-slate-400\",\n    ghost: \"bg-transparent text-slate-600 hover:bg-slate-100 focus:ring-slate-400\"\n  };\n\n  const sizes = {\n    sm: \"px-3 py-1.5 text-sm\",\n    md: \"px-4 py-2 text-base\",\n    lg: \"px-6 py-3 text-lg\"\n  };\n\n  return (\n    <button \n      className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`}\n      disabled={isLoading || disabled}\n      {...props}\n    >\n      {isLoading ? (\n        <svg className=\"animate-spin -ml-1 mr-2 h-4 w-4 text-current\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\">\n          <circle className=\"opacity-25\" cx=\"12\" cy=\"12\" r=\"10\" stroke=\"currentColor\" strokeWidth=\"4\"></circle>\n          <path className=\"opacity-75\" fill=\"currentColor\" d=\"M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z\"></path>\n        </svg>\n      ) : null}\n      {children}\n    </button>\n  );\n};\n\nexport default Button;\n"
+            }
+          ]
+        },
+        {
+          "path": "components/ChatBubble.tsx",
+          "generationType": 0,
+          "isDone": true,
+          "description": "Component to display a single chat message",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "import React from 'react';\nimport { Message, Sender } from '../types';\n\ninterface ChatBubbleProps {\n  message: Message;\n}\n\nconst ChatBubble: React.FC<ChatBubbleProps> = ({ message }) => {\n  const isUser = message.sender === Sender.USER;\n  const isError = message.isError;\n\n  return (\n    <div className={`flex w-full mb-4 ${isUser ? 'justify-end' : 'justify-start'}`}>\n      <div className={`flex max-w-[85%] md:max-w-[75%] ${isUser ? 'flex-row-reverse' : 'flex-row'} items-end gap-2`}>\n        \n        {/* Avatar */}\n        <div className={`w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center text-sm shadow-sm\n          ${isUser ? 'bg-indigo-100 text-indigo-700' : 'bg-green-100 text-green-700'}`}>\n          {isUser ? '🧑‍🎓' : '👨‍🏫'}\n        </div>\n\n        {/* Bubble */}\n        <div className={`\n          relative px-4 py-3 rounded-2xl text-sm md:text-base leading-relaxed shadow-sm\n          ${isUser \n            ? 'bg-indigo-600 text-white rounded-br-none' \n            : isError\n              ? 'bg-red-50 text-red-600 border border-red-200 rounded-bl-none'\n              : 'bg-white text-slate-800 border border-slate-100 rounded-bl-none'\n          }\n        `}>\n          <div className=\"whitespace-pre-wrap font-sans\">\n            {message.text}\n          </div>\n          <div className={`text-[10px] mt-1 ${isUser ? 'text-indigo-200' : 'text-slate-400'}`}>\n            {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default ChatBubble;\n"
+            }
+          ]
+        },
+        {
+          "path": "components/TopicSelector.tsx",
+          "generationType": 0,
+          "isDone": true,
+          "description": "Component to select math topics",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "import React from 'react';\nimport { TOPICS } from '../constants';\nimport { Topic } from '../types';\n\ninterface TopicSelectorProps {\n  onSelectTopic: (topic: Topic) => void;\n  currentTopicId: string | null;\n  disabled?: boolean;\n}\n\nconst TopicSelector: React.FC<TopicSelectorProps> = ({ onSelectTopic, currentTopicId, disabled }) => {\n  return (\n    <div className=\"flex flex-col gap-2 p-4 bg-white/50 backdrop-blur-sm rounded-2xl border border-white/20\">\n      <h3 className=\"text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 px-2\">Chủ đề học tập</h3>\n      <div className=\"flex flex-col gap-2\">\n        {TOPICS.map((topic) => (\n          <button\n            key={topic.id}\n            onClick={() => onSelectTopic(topic)}\n            disabled={disabled}\n            className={`\n              text-left px-3 py-2.5 rounded-xl transition-all duration-200 group flex items-center gap-3\n              ${currentTopicId === topic.id \n                ? 'bg-white shadow-md shadow-indigo-100 border-l-4 border-indigo-500' \n                : 'hover:bg-white/80 hover:shadow-sm border-l-4 border-transparent hover:border-indigo-200 text-slate-600'}\n              disabled:opacity-50 disabled:cursor-not-allowed\n            `}\n          >\n            <span className=\"text-lg bg-slate-50 w-8 h-8 flex items-center justify-center rounded-lg shadow-inner\">\n                {topic.icon}\n            </span>\n            <div className=\"flex-1 min-w-0\">\n              <div className={`font-semibold text-sm ${currentTopicId === topic.id ? 'text-indigo-700' : 'text-slate-700'}`}>\n                {topic.title}\n              </div>\n              <div className=\"text-xs text-slate-500 truncate\">\n                {topic.description}\n              </div>\n            </div>\n          </button>\n        ))}\n      </div>\n    </div>\n  );\n};\n\nexport default TopicSelector;\n"
+            }
+          ]
+        },
+        {
+          "path": "App.tsx",
+          "generationType": 0,
+          "isDone": true,
+          "description": "Main Application Component",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "import React, { useState, useRef, useEffect } from 'react';\nimport { Message, Sender, Topic } from './types';\nimport { TOPICS } from './constants';\nimport { initializeChat, sendMessageStream } from './services/geminiService';\nimport ChatBubble from './components/ChatBubble';\nimport Button from './components/Button';\nimport TopicSelector from './components/TopicSelector';\n\nconst App: React.FC = () => {\n  const [messages, setMessages] = useState<Message[]>([]);\n  const [inputText, setInputText] = useState('');\n  const [isLoading, setIsLoading] = useState(false);\n  const [currentTopicId, setCurrentTopicId] = useState<string | null>(null);\n  const [isSidebarOpen, setIsSidebarOpen] = useState(false);\n  \n  const messagesEndRef = useRef<HTMLDivElement>(null);\n  const textAreaRef = useRef<HTMLTextAreaElement>(null);\n\n  // Initialize chat with a welcome message\n  useEffect(() => {\n    const init = async () => {\n      try {\n        await initializeChat();\n        setMessages([\n          {\n            id: 'welcome',\n            text: \"Chào em! Thầy là giáo viên Toán lớp 8 đây. Em đang gặp khó khăn gì với bài học nào không? 🌱\\n\\nThầy có thể giúp em ôn tập về:\\n1. Đa thức (Cộng, trừ, nhân...)\\n2. Phân thức đại số (Rút gọn, quy đồng...)\\n\\nHãy chọn một chủ đề bên trái hoặc nhắn tin trực tiếp cho thầy nhé!\",\n            sender: Sender.AI,\n            timestamp: new Date()\n          }\n        ]);\n      } catch (error) {\n        console.error(\"Initialization failed\", error);\n      }\n    };\n    init();\n  }, []);\n\n  // Auto-scroll to bottom\n  const scrollToBottom = () => {\n    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });\n  };\n\n  useEffect(() => {\n    scrollToBottom();\n  }, [messages]);\n\n  // Handle Text Input Auto-resize\n  useEffect(() => {\n    if (textAreaRef.current) {\n      textAreaRef.current.style.height = 'auto';\n      textAreaRef.current.style.height = `${Math.min(textAreaRef.current.scrollHeight, 120)}px`;\n    }\n  }, [inputText]);\n\n  const handleSendMessage = async (text: string) => {\n    if (!text.trim() || isLoading) return;\n\n    const userMessage: Message = {\n      id: Date.now().toString(),\n      text: text,\n      sender: Sender.USER,\n      timestamp: new Date()\n    };\n\n    setMessages(prev => [...prev, userMessage]);\n    setInputText('');\n    setIsLoading(true);\n\n    // Reset textarea height\n    if (textAreaRef.current) {\n        textAreaRef.current.style.height = 'auto';\n    }\n\n    try {\n      // Placeholder for AI response\n      const aiMessageId = (Date.now() + 1).toString();\n      const initialAiMessage: Message = {\n        id: aiMessageId,\n        text: '',\n        sender: Sender.AI,\n        timestamp: new Date()\n      };\n      \n      setMessages(prev => [...prev, initialAiMessage]);\n\n      const stream = await sendMessageStream(text);\n      \n      let fullText = '';\n      for await (const chunk of stream) {\n        fullText += chunk;\n        setMessages(prev => prev.map(msg => \n          msg.id === aiMessageId ? { ...msg, text: fullText } : msg\n        ));\n      }\n\n    } catch (error) {\n      setMessages(prev => [...prev, {\n        id: Date.now().toString(),\n        text: \"Ôi, mạng bị lag rồi! Em thử hỏi lại thầy một lần nữa nhé. 😓\",\n        sender: Sender.AI,\n        timestamp: new Date(),\n        isError: true\n      }]);\n    } finally {\n      setIsLoading(false);\n    }\n  };\n\n  const handleTopicSelect = (topic: Topic) => {\n    setCurrentTopicId(topic.id);\n    setIsSidebarOpen(false); // Close sidebar on mobile\n    handleSendMessage(topic.promptTrigger);\n  };\n\n  const handleKeyDown = (e: React.KeyboardEvent) => {\n    if (e.key === 'Enter' && !e.shiftKey) {\n      e.preventDefault();\n      handleSendMessage(inputText);\n    }\n  };\n\n  return (\n    <div className=\"flex h-screen bg-slate-100 font-sans overflow-hidden\">\n      \n      {/* Mobile Sidebar Overlay */}\n      {isSidebarOpen && (\n        <div \n          className=\"fixed inset-0 bg-black/50 z-20 md:hidden\"\n          onClick={() => setIsSidebarOpen(false)}\n        />\n      )}\n\n      {/* Sidebar - Topics */}\n      <aside className={`\n        fixed md:static inset-y-0 left-0 z-30\n        w-72 bg-slate-50 border-r border-slate-200 transform transition-transform duration-300 ease-in-out\n        ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}\n        md:translate-x-0 md:flex md:flex-col\n      `}>\n        <div className=\"p-6 border-b border-slate-200 flex items-center gap-3 bg-white\">\n          <div className=\"w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center text-xl shadow-lg shadow-indigo-200\">\n            📐\n          </div>\n          <div>\n            <h1 className=\"font-bold text-slate-800 text-lg leading-tight\">Gia Sư Toán 8</h1>\n            <p className=\"text-xs text-indigo-600 font-medium\">Kết nối tri thức</p>\n          </div>\n        </div>\n\n        <div className=\"flex-1 overflow-y-auto p-4 custom-scrollbar\">\n            <TopicSelector \n              onSelectTopic={handleTopicSelect} \n              currentTopicId={currentTopicId}\n              disabled={isLoading}\n            />\n        </div>\n        \n        <div className=\"p-4 border-t border-slate-200 text-xs text-slate-400 text-center\">\n            Học tập vui vẻ cùng AI 🌱\n        </div>\n      </aside>\n\n      {/* Main Chat Area */}\n      <main className=\"flex-1 flex flex-col h-full relative\">\n        \n        {/* Mobile Header */}\n        <header className=\"md:hidden h-16 bg-white border-b border-slate-200 flex items-center px-4 justify-between shrink-0 z-10\">\n          <div className=\"flex items-center gap-3\">\n             <div className=\"w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center text-sm shadow-md\">\n                📐\n            </div>\n            <span className=\"font-bold text-slate-700\">Gia Sư Toán 8</span>\n          </div>\n          <button \n            onClick={() => setIsSidebarOpen(true)}\n            className=\"p-2 text-slate-500 hover:bg-slate-100 rounded-lg\"\n          >\n            <svg className=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\">\n              <path strokeLinecap=\"round\" strokeLinejoin=\"round\" strokeWidth={2} d=\"M4 6h16M4 12h16M4 18h16\" />\n            </svg>\n          </button>\n        </header>\n\n        {/* Messages List */}\n        <div className=\"flex-1 overflow-y-auto p-4 md:p-8 space-y-2 bg-[url('https://www.transparenttextures.com/patterns/graphy.png')] bg-fixed\">\n          {messages.map((msg) => (\n            <ChatBubble key={msg.id} message={msg} />\n          ))}\n          {isLoading && messages[messages.length-1]?.sender === Sender.USER && (\n             <div className=\"flex w-full mb-4 justify-start\">\n               <div className=\"flex max-w-[75%] flex-row items-end gap-2\">\n                 <div className=\"w-8 h-8 rounded-full bg-green-100 text-green-700 flex items-center justify-center text-sm shadow-sm\">👨‍🏫</div>\n                 <div className=\"bg-white px-4 py-3 rounded-2xl rounded-bl-none shadow-sm flex items-center gap-1.5\">\n                    <span className=\"block w-2 h-2 rounded-full bg-slate-400 animate-bounce\"></span>\n                    <span className=\"block w-2 h-2 rounded-full bg-slate-400 animate-bounce delay-100\"></span>\n                    <span className=\"block w-2 h-2 rounded-full bg-slate-400 animate-bounce delay-200\"></span>\n                 </div>\n               </div>\n             </div>\n          )}\n          <div ref={messagesEndRef} />\n        </div>\n\n        {/* Input Area */}\n        <div className=\"p-4 bg-white border-t border-slate-200 shrink-0\">\n          <div className=\"max-w-4xl mx-auto relative flex items-end gap-2\">\n            <textarea\n              ref={textAreaRef}\n              value={inputText}\n              onChange={(e) => setInputText(e.target.value)}\n              onKeyDown={handleKeyDown}\n              placeholder=\"Nhập câu hỏi toán học của em vào đây...\"\n              disabled={isLoading}\n              className=\"\n                flex-1 max-h-32 min-h-[44px] py-3 px-4 rounded-xl border border-slate-300 bg-slate-50\n                focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none resize-none\n                text-slate-700 placeholder-slate-400 shadow-inner\n              \"\n              rows={1}\n            />\n            <Button \n              onClick={() => handleSendMessage(inputText)} \n              disabled={!inputText.trim() || isLoading}\n              className=\"h-[44px] w-[44px] !p-0 rounded-full flex-shrink-0 mb-[1px]\"\n            >\n              <svg className=\"w-5 h-5 translate-x-0.5 -translate-y-0.5\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\">\n                <path strokeLinecap=\"round\" strokeLinejoin=\"round\" strokeWidth={2} d=\"M12 19l9 2-9-18-9 18 9-2zm0 0v-8\" />\n              </svg>\n            </Button>\n          </div>\n          <p className=\"text-center text-xs text-slate-400 mt-2\">\n            Thầy chỉ hướng dẫn, không giải bài hộ đâu nhé! ✏️\n          </p>\n        </div>\n\n      </main>\n    </div>\n  );\n};\n\nexport default App;\n"
+            }
+          ]
+        },
+        {
+          "path": "index.tsx",
+          "generationType": 0,
+          "isDone": true,
+          "description": "App entry point",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "import React from 'react';\nimport ReactDOM from 'react-dom/client';\nimport App from './App';\n\nconst rootElement = document.getElementById('root');\nif (!rootElement) {\n  throw new Error(\"Could not find root element to mount to\");\n}\n\nconst root = ReactDOM.createRoot(rootElement);\nroot.render(\n  <React.StrictMode>\n    <App />\n  </React.StrictMode>\n);\n"
+            }
+          ]
+        },
+        {
+          "path": "index.html",
+          "generationType": 0,
+          "isDone": true,
+          "description": "HTML entry point with Tailwind and Fonts",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "<!DOCTYPE html>\n<html lang=\"vi\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Gia Sư Toán 8 - Kết Nối Tri Thức</title>\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n    <link href=\"https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap\" rel=\"stylesheet\">\n    <style>\n      body {\n        font-family: 'Nunito', sans-serif;\n      }\n      .custom-scrollbar::-webkit-scrollbar {\n        width: 6px;\n      }\n      .custom-scrollbar::-webkit-scrollbar-track {\n        background: transparent;\n      }\n      .custom-scrollbar::-webkit-scrollbar-thumb {\n        background-color: #cbd5e1;\n        border-radius: 20px;\n      }\n    </style>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n  </body>\n</html>\n"
+            }
+          ]
+        }
+      ]
+    },
+    "createdTimestamp": {
+      "seconds": 1769853272,
+      "nanos": 834000000
+    },
+    "doneTimestamp": {
+      "seconds": 1769853274,
+      "nanos": 406000000
+    }
+  },
+  {
+    "id": 3,
+    "author": "user",
+    "payload": {
+      "type": "text",
+      "text": "thêm mục để tải ảnh lên",
+      "files": [],
+      "fileUploads": [],
+      "cMarkNode": {}
+    },
+    "createdTimestamp": {
+      "seconds": 1769853545,
+      "nanos": 68000000
+    }
+  },
+  {
+    "id": 4,
+    "author": "model",
+    "payload": {
+      "type": "thinking",
+      "text": "**Defining Image Attachment Types**\n\nI'm currently focused on defining the image attachment type in `types.ts`. I need to ensure it integrates seamlessly with the existing message structure. Next, I plan to render the uploaded images within the chat bubble component.\n\n\n**Implementing Image Upload Feature**\n\nI've just added the image upload functionality to `App.tsx`. I've included an upload button and handled file selection, converting the image to base64 for preview. The `handleSendMessage` function is also updated to include the base64 data. Now, I'm working on updating `geminiService.ts` to accept image data and integrate the API call with the image part.\n\n\n**Investigating API Compatibility**\n\nI'm now digging into the Google GenAI SDK documentation and type definitions. I'm exploring how `sendMessageStream` handles messages, especially concerning parts and image data. I'm checking if it aligns with the expected `string | Part[]` input format for sending images alongside text. The SDK examples are a little unclear, so I'm investigating the usage of `chat.sendMessageStream` and it's image content capabilities.\n\n\n**Clarifying Message Structure**\n\nI'm now clarifying the message structure, particularly for sending images using `sendMessageStream`. I've verified that the `message` parameter indeed accepts an array of parts when including an image. I'll need to construct the `message` as an array of parts if an image is present. I'm taking this direction, despite the warning, as I believe the context of the prompt has changed.\n\n**Updating Chat Bubble**\n\nNow I am updating `components/ChatBubble.tsx` to handle image rendering. I need to check for the presence of `message.image` and render an `<img>` tag before the message text if it exists.\n\n**Implementing Image Input**\n\nI am working on updating `App.tsx` to handle user input. I've added state for `selectedImage` and added a hidden file input and an icon button to select the images.\n\n\n**Refining Service Integration**\n\nI'm now refining the `geminiService.ts` update. The `sendMessageStream` will now accept an optional `image` string. When present, the `message` payload needs to be correctly constructed for the `chat.sendMessageStream` function. Based on the SDK knowledge, the message parameter typically aligns with content parts. Therefore, I need to send the correct payload structure to the API. It should be constructed as `[{ text: message }, { inlineData: { mimeType: 'image`...`}].\n\n\n**Finalizing SDK Integration**\n\nI'm now integrating the image data with the `sendMessageStream` function. I'm verifying the input structure for the `message` parameter, now that I know the SDK only takes a single parameter. I will construct the message as an array of parts. I'll parse the data URL to derive the `mimeType` and base64 data within the `geminiService.ts` file, and construct the correct message format. My next step will be to implement the visuals.\n\n\n**Verifying Chat Turn Structure**\n\nI'm now investigating the `generateContent` example to clarify message formatting. It seems the `message` parameter should accept an array of parts, as in `{ message: [textPart, imagePart] }`. I will proceed assuming `chat.sendMessageStream` supports a similar structure or `{ message: { parts: [...] } }`. I will implement the image within the `Message` type in `types.ts`, and update the Gemini service accordingly.\n\n\n\n**Refactoring SDK Usage**\n\nNow I'm refactoring the `geminiService.ts` file to use the correct `sendMessageStream` parameters. I've updated the `sendMessageStream` function to accept both text and an optional image string. I'm parsing the base64 image data and constructing the message payload, correctly formatting the message as an array of parts with the appropriate mime type, for integration with the Gemini API.\n\n\n\n**Updating Image Rendering**\n\nI'm now focusing on the image rendering within the chat bubble. I've updated `components/ChatBubble.tsx` to display the image using an `<img>` tag before the text content. I've also added some styling for responsiveness. I'm verifying the image display based on the `message.image` property and setting maximum dimensions to ensure a good visual user experience.\n\n\n**Refining Input Area UI**\n\nI'm now refining the UI in `App.tsx` for the input area. I've added a button with an image icon to trigger a hidden file input, and if an image is selected, a preview area appears above the textarea. I've also implemented state for `selectedImage`, and the functions `handleImageSelect` and `fileInputRef`.\n\n\n**Optimizing Image Handling**\n\nI'm now focusing on optimizing image handling to improve performance. I will be looking to add image compression and resizing. I need to make sure the types are correct for `react`. I am also working on setting maximum dimensions. I will add this to the image handling within `App.tsx` and the Gemini service to optimize and improve image upload speeds.\n\n\n**Confirming Parameter Formatting**\n\nI'm now confirming the parameter formatting. I'm focusing on ensuring the `message` parameter passed to `chatSession.sendMessageStream` is correctly structured. The documentation for `generateContent` suggests `contents: { parts: [imagePart, textPart] }`, while `chat` typically uses `message` directly. I will use the `Array<Part>` structure, as in `[{ text: ... }, { inlineData: ... }]`. I've updated `ChatBubble.tsx` to limit max image height. I am also working on adding the feature to upload images within the UI.\n\n\n**Simplifying Button Integration**\n\nI'm now considering the UI elements for image upload. I'm leaning towards a simpler approach, either a standard button with a camera icon or reusing the existing `Button` component with its `ghost` variant. Also, I've decided to add a more friendly welcome message in `App.tsx`: \"Thầy có thể xem ảnh bài tập của em nữa đó!\" (I can also look at photos of your homework!).\n\nI am also making sure to import `Part` and type appropriately.\n\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": {
+      "seconds": 1769853545,
+      "nanos": 69000000
+    },
+    "doneTimestamp": {
+      "seconds": 1769853609,
+      "nanos": 461000000
+    }
+  },
+  {
+    "id": 5,
+    "author": "model",
+    "payload": {
+      "type": "generationTable",
+      "entries": [
+        {
+          "path": "types.ts",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Add image property to Message interface",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "export enum Sender {\n  USER = 'user',\n  AI = 'model'\n}\n\nexport interface Message {\n  id: string;\n  text: string;\n  sender: Sender;\n  timestamp: Date;\n  image?: string;\n  isError?: boolean;\n}\n\nexport interface Topic {\n  id: string;\n  title: string;\n  description: string;\n  promptTrigger: string;\n  icon: string;\n}\n\nexport interface ChatState {\n  messages: Message[];\n  isLoading: boolean;\n  currentTopicId: string | null;\n}"
+            }
+          ]
+        },
+        {
+          "path": "services/geminiService.ts",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Update sendMessageStream to handle image input using inlineData",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "import { GoogleGenAI, Chat, GenerativeModel } from \"@google/genai\";\nimport { SYSTEM_INSTRUCTION } from \"../constants\";\n\nlet chatSession: Chat | null = null;\nlet genAI: GoogleGenAI | null = null;\n\nconst getClient = (): GoogleGenAI => {\n  if (!genAI) {\n    const apiKey = process.env.API_KEY;\n    if (!apiKey) {\n      throw new Error(\"API_KEY not found in environment variables\");\n    }\n    genAI = new GoogleGenAI({ apiKey });\n  }\n  return genAI;\n};\n\nexport const initializeChat = async (): Promise<Chat> => {\n  const ai = getClient();\n  \n  // Using gemini-3-flash-preview for fast, reasoning-capable interaction appropriate for tutoring\n  chatSession = ai.chats.create({\n    model: 'gemini-3-flash-preview',\n    config: {\n      systemInstruction: SYSTEM_INSTRUCTION,\n      temperature: 0.7, // Balance between creativity and strict instruction following\n      candidateCount: 1,\n    },\n  });\n\n  return chatSession;\n};\n\nconst parseDataUri = (dataUri: string) => {\n  const matches = dataUri.match(/^data:([^;]+);base64,(.+)$/);\n  if (!matches || matches.length !== 3) {\n    throw new Error('Invalid input string');\n  }\n  return {\n    mimeType: matches[1],\n    data: matches[2]\n  };\n};\n\nexport const sendMessageStream = async (message: string, image?: string): Promise<AsyncIterable<string>> => {\n  if (!chatSession) {\n    await initializeChat();\n  }\n\n  if (!chatSession) {\n    throw new Error(\"Failed to initialize chat session\");\n  }\n\n  try {\n    let messageInput: any = message;\n\n    if (image) {\n      const { mimeType, data } = parseDataUri(image);\n      messageInput = [\n        { text: message },\n        {\n          inlineData: {\n            mimeType,\n            data\n          }\n        }\n      ];\n    }\n\n    const result = await chatSession.sendMessageStream({ message: messageInput });\n    \n    // Create a generator to yield text chunks\n    async function* streamGenerator() {\n      for await (const chunk of result) {\n         if (chunk.text) {\n             yield chunk.text;\n         }\n      }\n    }\n    \n    return streamGenerator();\n\n  } catch (error) {\n    console.error(\"Error sending message to Gemini:\", error);\n    throw error;\n  }\n};\n\nexport const resetChat = () => {\n  chatSession = null;\n};"
+            }
+          ]
+        },
+        {
+          "path": "components/ChatBubble.tsx",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Render uploaded image in chat bubble",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "import React from 'react';\nimport { Message, Sender } from '../types';\n\ninterface ChatBubbleProps {\n  message: Message;\n}\n\nconst ChatBubble: React.FC<ChatBubbleProps> = ({ message }) => {\n  const isUser = message.sender === Sender.USER;\n  const isError = message.isError;\n\n  return (\n    <div className={`flex w-full mb-4 ${isUser ? 'justify-end' : 'justify-start'}`}>\n      <div className={`flex max-w-[85%] md:max-w-[75%] ${isUser ? 'flex-row-reverse' : 'flex-row'} items-end gap-2`}>\n        \n        {/* Avatar */}\n        <div className={`w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center text-sm shadow-sm\n          ${isUser ? 'bg-indigo-100 text-indigo-700' : 'bg-green-100 text-green-700'}`}>\n          {isUser ? '🧑‍🎓' : '👨‍🏫'}\n        </div>\n\n        {/* Bubble */}\n        <div className={`\n          relative px-4 py-3 rounded-2xl text-sm md:text-base leading-relaxed shadow-sm overflow-hidden\n          ${isUser \n            ? 'bg-indigo-600 text-white rounded-br-none' \n            : isError\n              ? 'bg-red-50 text-red-600 border border-red-200 rounded-bl-none'\n              : 'bg-white text-slate-800 border border-slate-100 rounded-bl-none'\n          }\n        `}>\n          {message.image && (\n            <div className=\"mb-2 -mx-2 -mt-2\">\n              <img \n                src={message.image} \n                alt=\"Uploaded content\" \n                className={`max-w-full h-auto max-h-64 object-contain rounded-lg ${isUser ? 'bg-indigo-700' : 'bg-slate-100'}`}\n              />\n            </div>\n          )}\n          <div className=\"whitespace-pre-wrap font-sans\">\n            {message.text}\n          </div>\n          <div className={`text-[10px] mt-1 ${isUser ? 'text-indigo-200' : 'text-slate-400'}`}>\n            {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default ChatBubble;"
+            }
+          ]
+        },
+        {
+          "path": "App.tsx",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Add image upload UI, preview, and handling logic",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "import React, { useState, useRef, useEffect, ChangeEvent } from 'react';\nimport { Message, Sender, Topic } from './types';\nimport { TOPICS } from './constants';\nimport { initializeChat, sendMessageStream } from './services/geminiService';\nimport ChatBubble from './components/ChatBubble';\nimport Button from './components/Button';\nimport TopicSelector from './components/TopicSelector';\n\nconst App: React.FC = () => {\n  const [messages, setMessages] = useState<Message[]>([]);\n  const [inputText, setInputText] = useState('');\n  const [selectedImage, setSelectedImage] = useState<string | null>(null);\n  const [isLoading, setIsLoading] = useState(false);\n  const [currentTopicId, setCurrentTopicId] = useState<string | null>(null);\n  const [isSidebarOpen, setIsSidebarOpen] = useState(false);\n  \n  const messagesEndRef = useRef<HTMLDivElement>(null);\n  const textAreaRef = useRef<HTMLTextAreaElement>(null);\n  const fileInputRef = useRef<HTMLInputElement>(null);\n\n  // Initialize chat with a welcome message\n  useEffect(() => {\n    const init = async () => {\n      try {\n        await initializeChat();\n        setMessages([\n          {\n            id: 'welcome',\n            text: \"Chào em! Thầy là giáo viên Toán lớp 8 đây. Em đang gặp khó khăn gì với bài học nào không? 🌱\\n\\nThầy có thể giúp em ôn tập về:\\n1. Đa thức (Cộng, trừ, nhân...)\\n2. Phân thức đại số (Rút gọn, quy đồng...)\\n\\nEm có thể chụp ảnh bài tập gửi cho thầy, hoặc chọn chủ đề bên trái nhé!\",\n            sender: Sender.AI,\n            timestamp: new Date()\n          }\n        ]);\n      } catch (error) {\n        console.error(\"Initialization failed\", error);\n      }\n    };\n    init();\n  }, []);\n\n  // Auto-scroll to bottom\n  const scrollToBottom = () => {\n    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });\n  };\n\n  useEffect(() => {\n    scrollToBottom();\n  }, [messages]);\n\n  // Handle Text Input Auto-resize\n  useEffect(() => {\n    if (textAreaRef.current) {\n      textAreaRef.current.style.height = 'auto';\n      textAreaRef.current.style.height = `${Math.min(textAreaRef.current.scrollHeight, 120)}px`;\n    }\n  }, [inputText]);\n\n  const handleImageUpload = (event: ChangeEvent<HTMLInputElement>) => {\n    const file = event.target.files?.[0];\n    if (file) {\n      const reader = new FileReader();\n      reader.onloadend = () => {\n        setSelectedImage(reader.result as string);\n      };\n      reader.readAsDataURL(file);\n    }\n    // Reset input so same file can be selected again if needed\n    if (fileInputRef.current) {\n      fileInputRef.current.value = '';\n    }\n  };\n\n  const clearImage = () => {\n    setSelectedImage(null);\n  };\n\n  const handleSendMessage = async (text: string) => {\n    if ((!text.trim() && !selectedImage) || isLoading) return;\n\n    const userMessage: Message = {\n      id: Date.now().toString(),\n      text: text,\n      image: selectedImage || undefined,\n      sender: Sender.USER,\n      timestamp: new Date()\n    };\n\n    setMessages(prev => [...prev, userMessage]);\n    setInputText('');\n    const imageToSend = selectedImage; // Store ref to current image before clearing\n    setSelectedImage(null);\n    setIsLoading(true);\n\n    // Reset textarea height\n    if (textAreaRef.current) {\n        textAreaRef.current.style.height = 'auto';\n    }\n\n    try {\n      // Placeholder for AI response\n      const aiMessageId = (Date.now() + 1).toString();\n      const initialAiMessage: Message = {\n        id: aiMessageId,\n        text: '',\n        sender: Sender.AI,\n        timestamp: new Date()\n      };\n      \n      setMessages(prev => [...prev, initialAiMessage]);\n\n      const stream = await sendMessageStream(text, imageToSend || undefined);\n      \n      let fullText = '';\n      for await (const chunk of stream) {\n        fullText += chunk;\n        setMessages(prev => prev.map(msg => \n          msg.id === aiMessageId ? { ...msg, text: fullText } : msg\n        ));\n      }\n\n    } catch (error) {\n      setMessages(prev => [...prev, {\n        id: Date.now().toString(),\n        text: \"Ôi, mạng bị lag rồi! Em thử hỏi lại thầy một lần nữa nhé. 😓\",\n        sender: Sender.AI,\n        timestamp: new Date(),\n        isError: true\n      }]);\n    } finally {\n      setIsLoading(false);\n    }\n  };\n\n  const handleTopicSelect = (topic: Topic) => {\n    setCurrentTopicId(topic.id);\n    setIsSidebarOpen(false); // Close sidebar on mobile\n    handleSendMessage(topic.promptTrigger);\n  };\n\n  const handleKeyDown = (e: React.KeyboardEvent) => {\n    if (e.key === 'Enter' && !e.shiftKey) {\n      e.preventDefault();\n      handleSendMessage(inputText);\n    }\n  };\n\n  return (\n    <div className=\"flex h-screen bg-slate-100 font-sans overflow-hidden\">\n      \n      {/* Mobile Sidebar Overlay */}\n      {isSidebarOpen && (\n        <div \n          className=\"fixed inset-0 bg-black/50 z-20 md:hidden\"\n          onClick={() => setIsSidebarOpen(false)}\n        />\n      )}\n\n      {/* Sidebar - Topics */}\n      <aside className={`\n        fixed md:static inset-y-0 left-0 z-30\n        w-72 bg-slate-50 border-r border-slate-200 transform transition-transform duration-300 ease-in-out\n        ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}\n        md:translate-x-0 md:flex md:flex-col\n      `}>\n        <div className=\"p-6 border-b border-slate-200 flex items-center gap-3 bg-white\">\n          <div className=\"w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center text-xl shadow-lg shadow-indigo-200\">\n            📐\n          </div>\n          <div>\n            <h1 className=\"font-bold text-slate-800 text-lg leading-tight\">Gia Sư Toán 8</h1>\n            <p className=\"text-xs text-indigo-600 font-medium\">Kết nối tri thức</p>\n          </div>\n        </div>\n\n        <div className=\"flex-1 overflow-y-auto p-4 custom-scrollbar\">\n            <TopicSelector \n              onSelectTopic={handleTopicSelect} \n              currentTopicId={currentTopicId}\n              disabled={isLoading}\n            />\n        </div>\n        \n        <div className=\"p-4 border-t border-slate-200 text-xs text-slate-400 text-center\">\n            Học tập vui vẻ cùng AI 🌱\n        </div>\n      </aside>\n\n      {/* Main Chat Area */}\n      <main className=\"flex-1 flex flex-col h-full relative\">\n        \n        {/* Mobile Header */}\n        <header className=\"md:hidden h-16 bg-white border-b border-slate-200 flex items-center px-4 justify-between shrink-0 z-10\">\n          <div className=\"flex items-center gap-3\">\n             <div className=\"w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center text-sm shadow-md\">\n                📐\n            </div>\n            <span className=\"font-bold text-slate-700\">Gia Sư Toán 8</span>\n          </div>\n          <button \n            onClick={() => setIsSidebarOpen(true)}\n            className=\"p-2 text-slate-500 hover:bg-slate-100 rounded-lg\"\n          >\n            <svg className=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\">\n              <path strokeLinecap=\"round\" strokeLinejoin=\"round\" strokeWidth={2} d=\"M4 6h16M4 12h16M4 18h16\" />\n            </svg>\n          </button>\n        </header>\n\n        {/* Messages List */}\n        <div className=\"flex-1 overflow-y-auto p-4 md:p-8 space-y-2 bg-[url('https://www.transparenttextures.com/patterns/graphy.png')] bg-fixed\">\n          {messages.map((msg) => (\n            <ChatBubble key={msg.id} message={msg} />\n          ))}\n          {isLoading && messages[messages.length-1]?.sender === Sender.USER && (\n             <div className=\"flex w-full mb-4 justify-start\">\n               <div className=\"flex max-w-[75%] flex-row items-end gap-2\">\n                 <div className=\"w-8 h-8 rounded-full bg-green-100 text-green-700 flex items-center justify-center text-sm shadow-sm\">👨‍🏫</div>\n                 <div className=\"bg-white px-4 py-3 rounded-2xl rounded-bl-none shadow-sm flex items-center gap-1.5\">\n                    <span className=\"block w-2 h-2 rounded-full bg-slate-400 animate-bounce\"></span>\n                    <span className=\"block w-2 h-2 rounded-full bg-slate-400 animate-bounce delay-100\"></span>\n                    <span className=\"block w-2 h-2 rounded-full bg-slate-400 animate-bounce delay-200\"></span>\n                 </div>\n               </div>\n             </div>\n          )}\n          <div ref={messagesEndRef} />\n        </div>\n\n        {/* Input Area */}\n        <div className=\"p-4 bg-white border-t border-slate-200 shrink-0\">\n          <div className=\"max-w-4xl mx-auto flex flex-col\">\n            \n            {/* Image Preview */}\n            {selectedImage && (\n              <div className=\"relative inline-block self-start mb-3 group\">\n                <div className=\"absolute -top-2 -right-2 bg-white rounded-full p-1 shadow-md cursor-pointer hover:bg-red-50\" onClick={clearImage}>\n                   <svg className=\"w-4 h-4 text-red-500\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\">\n                      <path strokeLinecap=\"round\" strokeLinejoin=\"round\" strokeWidth={2} d=\"M6 18L18 6M6 6l12 12\" />\n                   </svg>\n                </div>\n                <img \n                  src={selectedImage} \n                  alt=\"Preview\" \n                  className=\"h-24 w-auto rounded-xl border border-indigo-100 shadow-sm\" \n                />\n              </div>\n            )}\n\n            <div className=\"flex items-end gap-2\">\n              <input \n                type=\"file\" \n                ref={fileInputRef} \n                className=\"hidden\" \n                accept=\"image/*\" \n                onChange={handleImageUpload} \n              />\n              <Button \n                variant=\"secondary\"\n                onClick={() => fileInputRef.current?.click()}\n                disabled={isLoading}\n                className=\"h-[44px] w-[44px] !p-0 rounded-xl flex-shrink-0 text-slate-500 hover:text-indigo-600 mb-[1px]\"\n                title=\"Tải ảnh lên\"\n              >\n                <svg className=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\">\n                  <path strokeLinecap=\"round\" strokeLinejoin=\"round\" strokeWidth={2} d=\"M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z\" />\n                </svg>\n              </Button>\n\n              <textarea\n                ref={textAreaRef}\n                value={inputText}\n                onChange={(e) => setInputText(e.target.value)}\n                onKeyDown={handleKeyDown}\n                placeholder=\"Nhập câu hỏi hoặc gửi ảnh bài tập...\"\n                disabled={isLoading}\n                className=\"\n                  flex-1 max-h-32 min-h-[44px] py-3 px-4 rounded-xl border border-slate-300 bg-slate-50\n                  focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none resize-none\n                  text-slate-700 placeholder-slate-400 shadow-inner\n                \"\n                rows={1}\n              />\n              <Button \n                onClick={() => handleSendMessage(inputText)} \n                disabled={(!inputText.trim() && !selectedImage) || isLoading}\n                className=\"h-[44px] w-[44px] !p-0 rounded-full flex-shrink-0 mb-[1px]\"\n              >\n                <svg className=\"w-5 h-5 translate-x-0.5 -translate-y-0.5\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\">\n                  <path strokeLinecap=\"round\" strokeLinejoin=\"round\" strokeWidth={2} d=\"M12 19l9 2-9-18-9 18 9-2zm0 0v-8\" />\n                </svg>\n              </Button>\n            </div>\n          </div>\n          <p className=\"text-center text-xs text-slate-400 mt-2\">\n            Thầy chỉ hướng dẫn, không giải bài hộ đâu nhé! ✏️\n          </p>\n        </div>\n\n      </main>\n    </div>\n  );\n};\n\nexport default App;"
+            }
+          ]
+        }
+      ]
+    },
+    "createdTimestamp": {
+      "seconds": 1769853609,
+      "nanos": 461000000
+    },
+    "doneTimestamp": {
+      "seconds": 1769853610,
+      "nanos": 997000000
+    }
+  },
+  {
+    "id": 6,
+    "author": "user",
+    "payload": {
+      "type": "text",
+      "text": "Các công thức toán vẫn còn ghi trong $$, chỉnh sửa lại",
+      "files": [],
+      "fileUploads": [],
+      "cMarkNode": {}
+    },
+    "createdTimestamp": {
+      "seconds": 1769854936,
+      "nanos": 201000000
+    }
+  },
+  {
+    "id": 7,
+    "author": "model",
+    "payload": {
+      "type": "thinking",
+      "text": "**Improving Math Rendering**\n\nI'm focusing on enhancing the \"Gia Sư Toán 8\" app's math rendering. Current output seems to lack proper formula formatting. Raw text or LaTeX delimiters, such as `$x^2$` or `$$...$$`, aren't getting rendered. I need to ensure formulas are correctly displayed.\n\n\n**Refining Math Rendering**\n\nI've decided to refine the implementation. Rather than adding an unnecessary, heavy library, I'll leverage KaTeX from `esm.sh` for speed. I'll modify `ChatBubble.tsx` to detect and render math using KaTeX. Also, I'll update the `constants.ts` system instructions to utilize LaTeX delimiters, ensuring clearer formula syntax. The process will be regex-based, replacing LaTeX delimiters with HTML rendered using Katex.\n\n\n**Streamlining Math Integration**\n\nI'm now streamlining math integration by considering `react-markdown` with `remark-math`/`rehype-katex`, yet keeping it simple. The immediate issue stems from the prompt itself, where the model *is* producing LaTeX, but the UI fails to render it. I'll focus on adding KaTeX CSS to `index.html` and modifying `ChatBubble.tsx` to handle math in Markdown-like text, along with updating `constants.ts` to instruct the model to use LaTeX delimiters. If appropriate, a `Markdown` component will be used, otherwise a simpler manual parse will be used.\n\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": {
+      "seconds": 1769854936,
+      "nanos": 201000000
+    },
+    "doneTimestamp": {
+      "seconds": 1769854944,
+      "nanos": 468000000
+    }
+  },
+  {
+    "id": 8,
+    "author": "model",
+    "payload": {
+      "type": "generationTable",
+      "entries": [
+        {
+          "path": "index.html",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Add KaTeX CSS and update import map to include KaTeX for math rendering.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "<!DOCTYPE html>\n<html lang=\"vi\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Gia Sư Toán 8 - Kết Nối Tri Thức</title>\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n    <link href=\"https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap\" rel=\"stylesheet\">\n    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css\">\n    <style>\n      body {\n        font-family: 'Nunito', sans-serif;\n      }\n      .custom-scrollbar::-webkit-scrollbar {\n        width: 6px;\n      }\n      .custom-scrollbar::-webkit-scrollbar-track {\n        background: transparent;\n      }\n      .custom-scrollbar::-webkit-scrollbar-thumb {\n        background-color: #cbd5e1;\n        border-radius: 20px;\n      }\n      /* Ensure math formulas don't overflow their bubbles */\n      .katex-display {\n        overflow-x: auto;\n        overflow-y: hidden;\n        padding: 0.5em 0;\n      }\n    </style>\n  <script type=\"importmap\">\n{\n  \"imports\": {\n    \"react/\": \"https://esm.sh/react@^19.2.4/\",\n    \"react\": \"https://esm.sh/react@^19.2.4\",\n    \"@google/genai\": \"https://esm.sh/@google/genai@^1.39.0\",\n    \"react-dom/\": \"https://esm.sh/react-dom@^19.2.4/\",\n    \"katex\": \"https://esm.sh/katex@0.16.11\"\n  }\n}\n</script>\n</head>\n  <body>\n    <div id=\"root\"></div>\n  </body>\n</html>"
+            }
+          ]
+        },
+        {
+          "path": "constants.ts",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Update system instructions to enforce strict LaTeX usage for all math expressions.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "import { Topic } from './types';\n\nexport const SYSTEM_INSTRUCTION = `\nBạn là một giáo viên Toán lớp 8 thân thiện, dễ thương, tên là \"Thầy Giáo AI\", đang giảng dạy theo sách giáo khoa \"TOÁN 8 – KẾT NỐI TRI THỨC VỚI CUỘC SỐNG\".\n\nNHIỆM VỤ CỐT LÕI:\n- Hướng dẫn học sinh giải bài tập bằng cách GỢI MỞ, DẪN DẮT TƯ DUY.\n- TUYỆT ĐỐI KHÔNG đưa ra đáp án hoặc lời giải chi tiết ngay lập tức.\n- KHÔNG giải trọn vẹn bài toán nếu học sinh chưa tự suy nghĩ và đưa ra ý kiến.\n\nPHẠM VI KIẾN THỨC:\n1. Chương 1: Đa thức.\n2. Chương 2: Phân thức đại số.\n\nPHONG CÁCH GIAO TIẾP:\n- Xưng hô: \"Thầy\" – \"em\".\n- Sử dụng emoji nhẹ nhàng (⭐, 🌱, 😊, ✏️).\n\nQUY TẮC VIẾT CÔNG THỨC TOÁN (QUAN TRỌNG):\n- Sử dụng ký hiệu LaTeX cho TẤT CẢ các biểu thức toán học.\n- Bao quanh công thức inline bằng dấu $ đơn. Ví dụ: $x^2 + 2x + 1$.\n- Bao quanh các công thức quan trọng, phức tạp hoặc cần nhấn mạnh bằng dấu $$ kép để hiển thị ở dòng riêng. \n  Ví dụ: \n  $$ \\frac{x+1}{x-2} $$\n- Luôn sử dụng LaTeX cho phân số (\\frac{a}{b}), số mũ (a^n), căn bậc hai (\\sqrt{x}), v.v.\n\nQUY TRÌNH HƯỚNG DẪN:\n1. Khen ngợi/Ghi nhận.\n2. Gợi ý bước đầu qua câu hỏi.\n3. Chờ học sinh phản hồi rồi mới đi tiếp.\n`;\n\nexport const TOPICS: Topic[] = [\n  {\n    id: 'intro',\n    title: 'Làm quen',\n    description: 'Giới thiệu và trò chuyện',\n    promptTrigger: 'Chào thầy ạ, thầy có thể giúp gì cho em?',\n    icon: '👋'\n  },\n  {\n    id: 'poly_basic',\n    title: 'Đa thức cơ bản',\n    description: 'Đơn thức, bậc, thu gọn đa thức',\n    promptTrigger: 'Thầy ơi, em muốn ôn tập về Đơn thức và Đa thức.',\n    icon: '📦'\n  },\n  {\n    id: 'poly_ops',\n    title: 'Phép tính Đa thức',\n    description: 'Cộng, trừ, nhân đa thức',\n    promptTrigger: 'Thầy hướng dẫn em về cộng trừ và nhân đa thức nhé.',\n    icon: '➕'\n  },\n  {\n    id: 'frac_basic',\n    title: 'Phân thức đại số',\n    description: 'Định nghĩa, điều kiện xác định',\n    promptTrigger: 'Em đang thắc mắc về Phân thức đại số và điều kiện xác định.',\n    icon: '➗'\n  },\n  {\n    id: 'frac_ops',\n    title: 'Cộng trừ phân thức',\n    description: 'Quy đồng và tính toán',\n    promptTrigger: 'Thầy giúp em cách quy đồng và cộng trừ phân thức với ạ.',\n    icon: '🔄'\n  }\n];"
+            }
+          ]
+        },
+        {
+          "path": "components/ChatBubble.tsx",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Implement math formula rendering logic using KaTeX to parse $ and $$ delimiters.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "import React from 'react';\nimport { Message, Sender } from '../types';\nimport katex from 'katex';\n\ninterface ChatBubbleProps {\n  message: Message;\n}\n\nconst ChatBubble: React.FC<ChatBubbleProps> = ({ message }) => {\n  const isUser = message.sender === Sender.USER;\n  const isError = message.isError;\n\n  // Helper to render text and math\n  const renderContent = (text: string) => {\n    if (!text) return null;\n\n    // Regex to split by $$...$$ or $...$\n    // We look for block math first, then inline math\n    const parts = text.split(/(\\$\\$.*?\\$\\$|\\$.*?\\$)/gs);\n\n    return parts.map((part, index) => {\n      if (part.startsWith('$$') && part.endsWith('$$')) {\n        const formula = part.slice(2, -2);\n        try {\n          const html = katex.renderToString(formula, { displayMode: true, throwOnError: false });\n          return <div key={index} dangerouslySetInnerHTML={{ __html: html }} />;\n        } catch (e) {\n          return <span key={index}>{part}</span>;\n        }\n      } else if (part.startsWith('$') && part.endsWith('$')) {\n        const formula = part.slice(1, -1);\n        try {\n          const html = katex.renderToString(formula, { displayMode: false, throwOnError: false });\n          return <span key={index} dangerouslySetInnerHTML={{ __html: html }} />;\n        } catch (e) {\n          return <span key={index}>{part}</span>;\n        }\n      }\n      return <span key={index} className=\"whitespace-pre-wrap\">{part}</span>;\n    });\n  };\n\n  return (\n    <div className={`flex w-full mb-4 ${isUser ? 'justify-end' : 'justify-start'}`}>\n      <div className={`flex max-w-[90%] md:max-w-[80%] ${isUser ? 'flex-row-reverse' : 'flex-row'} items-end gap-2`}>\n        \n        {/* Avatar */}\n        <div className={`w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center text-sm shadow-sm\n          ${isUser ? 'bg-indigo-100 text-indigo-700' : 'bg-green-100 text-green-700'}`}>\n          {isUser ? '🧑‍🎓' : '👨‍🏫'}\n        </div>\n\n        {/* Bubble */}\n        <div className={`\n          relative px-4 py-3 rounded-2xl text-sm md:text-base leading-relaxed shadow-sm overflow-hidden\n          ${isUser \n            ? 'bg-indigo-600 text-white rounded-br-none' \n            : isError\n              ? 'bg-red-50 text-red-600 border border-red-200 rounded-bl-none'\n              : 'bg-white text-slate-800 border border-slate-100 rounded-bl-none'\n          }\n        `}>\n          {message.image && (\n            <div className=\"mb-2 -mx-2 -mt-2\">\n              <img \n                src={message.image} \n                alt=\"Uploaded content\" \n                className={`max-w-full h-auto max-h-64 object-contain rounded-lg ${isUser ? 'bg-indigo-700' : 'bg-slate-100'}`}\n              />\n            </div>\n          )}\n          <div className=\"font-sans\">\n            {renderContent(message.text)}\n          </div>\n          <div className={`text-[10px] mt-1 ${isUser ? 'text-indigo-200' : 'text-slate-400'}`}>\n            {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default ChatBubble;"
+            }
+          ]
+        }
+      ]
+    },
+    "createdTimestamp": {
+      "seconds": 1769854944,
+      "nanos": 470000000
+    },
+    "doneTimestamp": {
+      "seconds": 1769854947,
+      "nanos": 923000000
+    }
+  },
+  {
+    "id": 10,
+    "author": "user",
+    "payload": {
+      "type": "text",
+      "text": "Làm sao để thành 1 app riêng vậy",
+      "files": [],
+      "fileUploads": [],
+      "cMarkNode": {}
+    },
+    "createdTimestamp": {
+      "seconds": 1769855191,
+      "nanos": 112000000
+    }
+  },
+  {
+    "id": 11,
+    "author": "model",
+    "payload": {
+      "type": "thinking",
+      "text": "**Considering App Deployment**\n\nI'm now focusing on the user's question about turning something into a \"standalone app.\" My interpretation is leaning towards Progressive Web Apps (PWAs) as a primary method for achieving this \"installation\" feel on various devices. I am also thinking about features to enhance that experience further.\n\n\n**Implementing PWA Features**\n\nI've made progress on PWA features! I'm adding `manifest.json` for the app's identity and visual presentation, plus a basic `sw.js` service worker for offline functionality. I've updated `index.html` to link these files. My plan is to keep UI changes minimal, focusing on the core infrastructure for now, and I'll consider adding an optional subtle install prompt later.\n\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": {
+      "seconds": 1769855191,
+      "nanos": 112000000
+    },
+    "doneTimestamp": {
+      "seconds": 1769855197,
+      "nanos": 194000000
+    }
+  },
+  {
+    "id": 12,
+    "author": "model",
+    "payload": {
+      "type": "text",
+      "text": "Để biến ứng dụng web này thành một \"app riêng\" (Progressive Web App - PWA) có thể cài đặt trực tiếp lên điện thoại hoặc máy tính mà không cần thông qua App Store/Play Store, chúng ta cần bổ sung các thành phần kỹ thuật quan trọng sau:\n\n### Các cập nhật cần thực hiện:\n\n1.  **Tạo file `manifest.json`**: Đây là file cấu hình cho phép trình duyệt hiểu đây là một ứng dụng có thể cài đặt. Nó định nghĩa tên app, màu sắc, và các biểu tượng (icons).\n2.  **Tạo file `sw.js` (Service Worker)**: Giúp ứng dụng hoạt động mượt mà hơn, có khả năng lưu trữ đệm (caching) để mở app nhanh và hỗ trợ một phần khi offline.\n3.  **Cập nhật `index.html`**: Để liên kết tệp manifest và đăng ký Service Worker khi người dùng truy cập.\n4.  **Cập nhật `App.tsx`**: Thêm nút \"Cài đặt ứng dụng\" vào thanh menu để người dùng dễ dàng nhận biết và tải về.\n\n### Hiệu quả sau khi cập nhật:\n-   Trên điện thoại: Sẽ có dòng thông báo \"Thêm vào màn hình chính\". Sau khi cài, app sẽ có icon riêng, mở lên không có thanh địa chỉ trình duyệt, trông y hệt app tải từ Store.\n-   Trên máy tính (Chrome/Edge): Sẽ xuất hiện biểu tượng cài đặt ở góc thanh địa chỉ.\n\nDưới đây là mã nguồn chi tiết:\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": {
+      "seconds": 1769855197,
+      "nanos": 194000000
+    },
+    "doneTimestamp": {
+      "seconds": 1769855197,
+      "nanos": 397000000
+    }
+  },
+  {
+    "id": 13,
+    "author": "model",
+    "payload": {
+      "type": "generationTable",
+      "entries": [
+        {
+          "path": "manifest.json",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Tạo file manifest để ứng dụng có thể cài đặt như app mobile/desktop",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "{\n  \"name\": \"Gia Sư Toán 8 - Kết Nối Tri Thức\",\n  \"short_name\": \"Toán 8 AI\",\n  \"description\": \"Gia sư toán thông minh cho học sinh lớp 8\",\n  \"start_url\": \".\",\n  \"display\": \"standalone\",\n  \"background_color\": \"#ffffff\",\n  \"theme_color\": \"#4f46e5\",\n  \"icons\": [\n    {\n      \"src\": \"https://cdn-icons-png.flaticon.com/512/3426/3426653.png\",\n      \"sizes\": \"192x192\",\n      \"type\": \"image/png\"\n    },\n    {\n      \"src\": \"https://cdn-icons-png.flaticon.com/512/3426/3426653.png\",\n      \"sizes\": \"512x512\",\n      \"type\": \"image/png\"\n    }\n  ]\n}"
+            }
+          ]
+        },
+        {
+          "path": "sw.js",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Service worker cơ bản để hỗ trợ PWA và offline",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "const CACHE_NAME = 'toan8-ai-v1';\nconst ASSETS = [\n  '/',\n  '/index.html',\n  '/manifest.json'\n];\n\nself.addEventListener('install', (event) => {\n  event.waitUntil(\n    caches.open(CACHE_NAME).then((cache) => {\n      return cache.addAll(ASSETS);\n    })\n  );\n});\n\nself.addEventListener('fetch', (event) => {\n  event.respondWith(\n    caches.match(event.request).then((response) => {\n      return response || fetch(event.request);\n    })\n  );\n});"
+            }
+          ]
+        },
+        {
+          "path": "index.html",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Liên kết manifest và đăng ký service worker",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "<!DOCTYPE html>\n<html lang=\"vi\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\" />\n    <meta name=\"theme-color\" content=\"#4f46e5\" />\n    <meta name=\"apple-mobile-web-app-capable\" content=\"yes\" />\n    <meta name=\"apple-mobile-web-app-status-bar-style\" content=\"black-translucent\" />\n    <title>Gia Sư Toán 8 - Kết Nối Tri Thức</title>\n    <link rel=\"manifest\" href=\"manifest.json\" />\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n    <link href=\"https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap\" rel=\"stylesheet\">\n    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css\">\n    <style>\n      body {\n        font-family: 'Nunito', sans-serif;\n        overscroll-behavior-y: contain;\n      }\n      .custom-scrollbar::-webkit-scrollbar {\n        width: 6px;\n      }\n      .custom-scrollbar::-webkit-scrollbar-track {\n        background: transparent;\n      }\n      .custom-scrollbar::-webkit-scrollbar-thumb {\n        background-color: #cbd5e1;\n        border-radius: 20px;\n      }\n      .katex-display {\n        overflow-x: auto;\n        overflow-y: hidden;\n        padding: 0.5em 0;\n      }\n    </style>\n  <script type=\"importmap\">\n{\n  \"imports\": {\n    \"react/\": \"https://esm.sh/react@^19.2.4/\",\n    \"react\": \"https://esm.sh/react@^19.2.4\",\n    \"@google/genai\": \"https://esm.sh/@google/genai@^1.39.0\",\n    \"react-dom/\": \"https://esm.sh/react-dom@^19.2.4/\",\n    \"katex\": \"https://esm.sh/katex@0.16.11\"\n  }\n}\n</script>\n</head>\n  <body>\n    <div id=\"root\"></div>\n    <script>\n      if ('serviceWorker' in navigator) {\n        window.addEventListener('load', () => {\n          navigator.serviceWorker.register('./sw.js').catch(err => console.log('SW registration failed:', err));\n        });\n      }\n    </script>\n  </body>\n</html>"
+            }
+          ]
+        },
+        {
+          "path": "App.tsx",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Thêm logic bắt sự kiện cài đặt và hiển thị nút \"Cài đặt ứng dụng\" trong sidebar",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "import React, { useState, useRef, useEffect, ChangeEvent } from 'react';\nimport { Message, Sender, Topic } from './types';\nimport { TOPICS } from './constants';\nimport { initializeChat, sendMessageStream } from './services/geminiService';\nimport ChatBubble from './components/ChatBubble';\nimport Button from './components/Button';\nimport TopicSelector from './components/TopicSelector';\n\nconst App: React.FC = () => {\n  const [messages, setMessages] = useState<Message[]>([]);\n  const [inputText, setInputText] = useState('');\n  const [selectedImage, setSelectedImage] = useState<string | null>(null);\n  const [isLoading, setIsLoading] = useState(false);\n  const [currentTopicId, setCurrentTopicId] = useState<string | null>(null);\n  const [isSidebarOpen, setIsSidebarOpen] = useState(false);\n  const [deferredPrompt, setDeferredPrompt] = useState<any>(null);\n  \n  const messagesEndRef = useRef<HTMLDivElement>(null);\n  const textAreaRef = useRef<HTMLTextAreaElement>(null);\n  const fileInputRef = useRef<HTMLInputElement>(null);\n\n  useEffect(() => {\n    const handleBeforeInstallPrompt = (e: any) => {\n      e.preventDefault();\n      setDeferredPrompt(e);\n    };\n\n    window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);\n    return () => window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);\n  }, []);\n\n  const handleInstallClick = async () => {\n    if (!deferredPrompt) return;\n    deferredPrompt.prompt();\n    const { outcome } = await deferredPrompt.userChoice;\n    if (outcome === 'accepted') {\n      setDeferredPrompt(null);\n    }\n  };\n\n  useEffect(() => {\n    const init = async () => {\n      try {\n        await initializeChat();\n        setMessages([\n          {\n            id: 'welcome',\n            text: \"Chào em! Thầy là giáo viên Toán lớp 8 đây. Em đang gặp khó khăn gì với bài học nào không? 🌱\\n\\nThầy có thể giúp em ôn tập về:\\n1. Đa thức (Cộng, trừ, nhân...)\\n2. Phân thức đại số (Rút gọn, quy đồng...)\\n\\nEm có thể chụp ảnh bài tập gửi cho thầy, hoặc chọn chủ đề bên trái nhé!\",\n            sender: Sender.AI,\n            timestamp: new Date()\n          }\n        ]);\n      } catch (error) {\n        console.error(\"Initialization failed\", error);\n      }\n    };\n    init();\n  }, []);\n\n  const scrollToBottom = () => {\n    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });\n  };\n\n  useEffect(() => {\n    scrollToBottom();\n  }, [messages]);\n\n  useEffect(() => {\n    if (textAreaRef.current) {\n      textAreaRef.current.style.height = 'auto';\n      textAreaRef.current.style.height = `${Math.min(textAreaRef.current.scrollHeight, 120)}px`;\n    }\n  }, [inputText]);\n\n  const handleImageUpload = (event: ChangeEvent<HTMLInputElement>) => {\n    const file = event.target.files?.[0];\n    if (file) {\n      const reader = new FileReader();\n      reader.onloadend = () => {\n        setSelectedImage(reader.result as string);\n      };\n      reader.readAsDataURL(file);\n    }\n    if (fileInputRef.current) {\n      fileInputRef.current.value = '';\n    }\n  };\n\n  const clearImage = () => {\n    setSelectedImage(null);\n  };\n\n  const handleSendMessage = async (text: string) => {\n    if ((!text.trim() && !selectedImage) || isLoading) return;\n\n    const userMessage: Message = {\n      id: Date.now().toString(),\n      text: text,\n      image: selectedImage || undefined,\n      sender: Sender.USER,\n      timestamp: new Date()\n    };\n\n    setMessages(prev => [...prev, userMessage]);\n    setInputText('');\n    const imageToSend = selectedImage;\n    setSelectedImage(null);\n    setIsLoading(true);\n\n    if (textAreaRef.current) {\n        textAreaRef.current.style.height = 'auto';\n    }\n\n    try {\n      const aiMessageId = (Date.now() + 1).toString();\n      const initialAiMessage: Message = {\n        id: aiMessageId,\n        text: '',\n        sender: Sender.AI,\n        timestamp: new Date()\n      };\n      \n      setMessages(prev => [...prev, initialAiMessage]);\n\n      const stream = await sendMessageStream(text, imageToSend || undefined);\n      \n      let fullText = '';\n      for await (const chunk of stream) {\n        fullText += chunk;\n        setMessages(prev => prev.map(msg => \n          msg.id === aiMessageId ? { ...msg, text: fullText } : msg\n        ));\n      }\n\n    } catch (error) {\n      setMessages(prev => [...prev, {\n        id: Date.now().toString(),\n        text: \"Ôi, mạng bị lag rồi! Em thử hỏi lại thầy một lần nữa nhé. 😓\",\n        sender: Sender.AI,\n        timestamp: new Date(),\n        isError: true\n      }]);\n    } finally {\n      setIsLoading(false);\n    }\n  };\n\n  const handleTopicSelect = (topic: Topic) => {\n    setCurrentTopicId(topic.id);\n    setIsSidebarOpen(false);\n    handleSendMessage(topic.promptTrigger);\n  };\n\n  const handleKeyDown = (e: React.KeyboardEvent) => {\n    if (e.key === 'Enter' && !e.shiftKey) {\n      e.preventDefault();\n      handleSendMessage(inputText);\n    }\n  };\n\n  return (\n    <div className=\"flex h-screen bg-slate-100 font-sans overflow-hidden\">\n      \n      {isSidebarOpen && (\n        <div \n          className=\"fixed inset-0 bg-black/50 z-20 md:hidden\"\n          onClick={() => setIsSidebarOpen(false)}\n        />\n      )}\n\n      <aside className={`\n        fixed md:static inset-y-0 left-0 z-30\n        w-72 bg-slate-50 border-r border-slate-200 transform transition-transform duration-300 ease-in-out\n        ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}\n        md:translate-x-0 md:flex md:flex-col\n      `}>\n        <div className=\"p-6 border-b border-slate-200 flex items-center gap-3 bg-white\">\n          <div className=\"w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center text-xl shadow-lg shadow-indigo-200\">\n            📐\n          </div>\n          <div>\n            <h1 className=\"font-bold text-slate-800 text-lg leading-tight\">Gia Sư Toán 8</h1>\n            <p className=\"text-xs text-indigo-600 font-medium\">Kết nối tri thức</p>\n          </div>\n        </div>\n\n        <div className=\"flex-1 overflow-y-auto p-4 custom-scrollbar\">\n            <TopicSelector \n              onSelectTopic={handleTopicSelect} \n              currentTopicId={currentTopicId}\n              disabled={isLoading}\n            />\n\n            {deferredPrompt && (\n              <div className=\"mt-6 p-4 bg-indigo-50 rounded-2xl border border-indigo-100\">\n                <p className=\"text-xs text-indigo-700 font-semibold mb-2\">Trải nghiệm tốt hơn!</p>\n                <Button \n                  onClick={handleInstallClick}\n                  variant=\"primary\" \n                  size=\"sm\" \n                  className=\"w-full shadow-md\"\n                >\n                  Tải ứng dụng 📱\n                </Button>\n              </div>\n            )}\n        </div>\n        \n        <div className=\"p-4 border-t border-slate-200 text-xs text-slate-400 text-center\">\n            Học tập vui vẻ cùng AI 🌱\n        </div>\n      </aside>\n\n      <main className=\"flex-1 flex flex-col h-full relative\">\n        <header className=\"md:hidden h-16 bg-white border-b border-slate-200 flex items-center px-4 justify-between shrink-0 z-10\">\n          <div className=\"flex items-center gap-3\">\n             <div className=\"w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center text-sm shadow-md\">\n                📐\n            </div>\n            <span className=\"font-bold text-slate-700\">Gia Sư Toán 8</span>\n          </div>\n          <button \n            onClick={() => setIsSidebarOpen(true)}\n            className=\"p-2 text-slate-500 hover:bg-slate-100 rounded-lg\"\n          >\n            <svg className=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\">\n              <path strokeLinecap=\"round\" strokeLinejoin=\"round\" strokeWidth={2} d=\"M4 6h16M4 12h16M4 18h16\" />\n            </svg>\n          </button>\n        </header>\n\n        <div className=\"flex-1 overflow-y-auto p-4 md:p-8 space-y-2 bg-[url('https://www.transparenttextures.com/patterns/graphy.png')] bg-fixed\">\n          {messages.map((msg) => (\n            <ChatBubble key={msg.id} message={msg} />\n          ))}\n          {isLoading && messages[messages.length-1]?.sender === Sender.USER && (\n             <div className=\"flex w-full mb-4 justify-start\">\n               <div className=\"flex max-w-[75%] flex-row items-end gap-2\">\n                 <div className=\"w-8 h-8 rounded-full bg-green-100 text-green-700 flex items-center justify-center text-sm shadow-sm\">👨‍🏫</div>\n                 <div className=\"bg-white px-4 py-3 rounded-2xl rounded-bl-none shadow-sm flex items-center gap-1.5\">\n                    <span className=\"block w-2 h-2 rounded-full bg-slate-400 animate-bounce\"></span>\n                    <span className=\"block w-2 h-2 rounded-full bg-slate-400 animate-bounce delay-100\"></span>\n                    <span className=\"block w-2 h-2 rounded-full bg-slate-400 animate-bounce delay-200\"></span>\n                 </div>\n               </div>\n             </div>\n          )}\n          <div ref={messagesEndRef} />\n        </div>\n\n        <div className=\"p-4 bg-white border-t border-slate-200 shrink-0\">\n          <div className=\"max-w-4xl mx-auto flex flex-col\">\n            {selectedImage && (\n              <div className=\"relative inline-block self-start mb-3 group\">\n                <div className=\"absolute -top-2 -right-2 bg-white rounded-full p-1 shadow-md cursor-pointer hover:bg-red-50\" onClick={clearImage}>\n                   <svg className=\"w-4 h-4 text-red-500\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\">\n                      <path strokeLinecap=\"round\" strokeLinejoin=\"round\" strokeWidth={2} d=\"M6 18L18 6M6 6l12 12\" />\n                   </svg>\n                </div>\n                <img \n                  src={selectedImage} \n                  alt=\"Preview\" \n                  className=\"h-24 w-auto rounded-xl border border-indigo-100 shadow-sm\" \n                />\n              </div>\n            )}\n\n            <div className=\"flex items-end gap-2\">\n              <input \n                type=\"file\" \n                ref={fileInputRef} \n                className=\"hidden\" \n                accept=\"image/*\" \n                onChange={handleImageUpload} \n              />\n              <Button \n                variant=\"secondary\"\n                onClick={() => fileInputRef.current?.click()}\n                disabled={isLoading}\n                className=\"h-[44px] w-[44px] !p-0 rounded-xl flex-shrink-0 text-slate-500 hover:text-indigo-600 mb-[1px]\"\n                title=\"Tải ảnh lên\"\n              >\n                <svg className=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\">\n                  <path strokeLinecap=\"round\" strokeLinejoin=\"round\" strokeWidth={2} d=\"M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z\" />\n                </svg>\n              </Button>\n\n              <textarea\n                ref={textAreaRef}\n                value={inputText}\n                onChange={(e) => setInputText(e.target.value)}\n                onKeyDown={handleKeyDown}\n                placeholder=\"Nhập câu hỏi hoặc gửi ảnh bài tập...\"\n                disabled={isLoading}\n                className=\"\n                  flex-1 max-h-32 min-h-[44px] py-3 px-4 rounded-xl border border-slate-300 bg-slate-50\n                  focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none resize-none\n                  text-slate-700 placeholder-slate-400 shadow-inner\n                \"\n                rows={1}\n              />\n              <Button \n                onClick={() => handleSendMessage(inputText)} \n                disabled={(!inputText.trim() && !selectedImage) || isLoading}\n                className=\"h-[44px] w-[44px] !p-0 rounded-full flex-shrink-0 mb-[1px]\"\n              >\n                <svg className=\"w-5 h-5 translate-x-0.5 -translate-y-0.5\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\">\n                  <path strokeLinecap=\"round\" strokeLinejoin=\"round\" strokeWidth={2} d=\"M12 19l9 2-9-18-9 18 9-2zm0 0v-8\" />\n                </svg>\n              </Button>\n            </div>\n          </div>\n          <p className=\"text-center text-xs text-slate-400 mt-2\">\n            Thầy chỉ hướng dẫn, không giải bài hộ đâu nhé! ✏️\n          </p>\n        </div>\n      </main>\n    </div>\n  );\n};\n\nexport default App;"
+            }
+          ]
+        }
+      ]
+    },
+    "createdTimestamp": {
+      "seconds": 1769855199,
+      "nanos": 707000000
+    },
+    "doneTimestamp": {
+      "seconds": 1769855201,
+      "nanos": 343000000
+    }
+  }
+]
