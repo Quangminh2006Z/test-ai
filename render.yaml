@@ -7,7 +7,5 @@ services:
     envVars:
       - key: GROQ_API_KEY
         sync: false
-      - key: GROQ_TEXT_MODEL
-        value: llama-3.1-8b-instant
-      - key: GROQ_VISION_MODEL
-        value: meta-llama/llama-4-maverick-17b-128e-instruct
+      - key: GROQ_MODEL
+        value: qwen/qwen3.6-27b

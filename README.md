@@ -18,6 +18,7 @@ Yêu cầu: Node.js
 2. Cập nhật file [.env.local](.env.local) với key Groq:
    ```env
    GROQ_API_KEY=your_key_here
+   GROQ_MODEL=qwen/qwen3.6-27b
    PORT=3003
    VITE_API_URL=http://localhost:3003
    ```
@@ -44,7 +45,7 @@ Vì GitHub Pages là frontend tĩnh, backend cần chạy trên dịch vụ có 
 - Vercel
 - Azure App Service
 
-Khi tạo Web Service trên Render, đặt biến môi trường `GROQ_API_KEY` bằng key Groq.
+Khi tạo Web Service trên Render, đặt biến môi trường `GROQ_API_KEY` bằng key Groq và `GROQ_MODEL=qwen/qwen3.6-27b`.
 Sau khi backend public chạy, dùng URL đó làm giá trị GitHub secret `VITE_API_URL`.
 
 Lưu ý: `GROQ_API_KEY` chỉ được đặt ở server, không được để trong frontend.
