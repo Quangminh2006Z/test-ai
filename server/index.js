@@ -11,7 +11,7 @@ dotenv.config({ path: path.resolve(__dirname, '../.env.local') });
 
 const app = express();
 const port = process.env.PORT || 3003;
-const textModel = process.env.GROQ_TEXT_MODEL || 'llama-3.3-70b-versatile';
+const textModel = process.env.GROQ_TEXT_MODEL || 'llama-3.1-8b-instant';
 const visionModel = process.env.GROQ_VISION_MODEL || 'meta-llama/llama-4-maverick-17b-128e-instruct';
 
 app.use(cors());
