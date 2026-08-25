@@ -275,7 +275,7 @@ const App: React.FC = () => {
                   title="Bắt đầu một đoạn chat mới"
                 >
                   <span className="text-base">＋</span>
-                  <span>Thêm đoạn chat mới</span>
+                  <span>Đoạn chat mới</span>
                 </button>
 
                 <button
