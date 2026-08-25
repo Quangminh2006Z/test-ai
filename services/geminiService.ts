@@ -1,4 +1,4 @@
-export const hasApiKey = (): boolean => !!(import.meta.env.VITE_API_URL || 'http://localhost:3002');
+export const hasApiKey = (): boolean => !!(import.meta.env.VITE_API_URL || 'https://test-ai-1-kfrc.onrender.com');
 
 export const initializeChat = async (): Promise<boolean> => {
   if (!hasApiKey()) {
@@ -9,7 +9,7 @@ export const initializeChat = async (): Promise<boolean> => {
 };
 
 const getApiBaseUrl = (): string => {
-  const configured = import.meta.env.VITE_API_URL || 'http://localhost:3002';
+  const configured = import.meta.env.VITE_API_URL || 'https://test-ai-1-kfrc.onrender.com';
   return configured.replace(/\/$/, '');
 };
 
