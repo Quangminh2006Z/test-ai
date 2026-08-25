@@ -11,6 +11,8 @@ dotenv.config({ path: path.resolve(__dirname, '../.env.local') });
 
 const app = express();
 const port = process.env.PORT || 3003;
+const textModel = process.env.GROQ_TEXT_MODEL || 'llama-3.3-70b-versatile';
+const visionModel = process.env.GROQ_VISION_MODEL || 'meta-llama/llama-4-maverick-17b-128e-instruct';
 
 app.use(cors());
 app.use(express.json({ limit: '10mb' }));
@@ -64,7 +66,7 @@ app.post('/api/chat', async (req, res) => {
       : [];
 
     const payload = {
-      model: 'meta-llama/llama-4-scout-17b-16e-instruct',
+      model: images.length > 0 ? visionModel : textModel,
       messages: [
         { role: 'system', content: systemPrompt },
         ...safeHistory.slice(0, -1),
