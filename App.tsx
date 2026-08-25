@@ -139,6 +139,36 @@ const App: React.FC = () => {
     setIsSidebarOpen(false);
   };
 
+  const getChatErrorMessage = (error: unknown): string => {
+    const rawMessage = error instanceof Error ? error.message : String(error);
+    let detail = rawMessage;
+
+    try {
+      const parsed = JSON.parse(rawMessage);
+      detail = parsed.error || parsed.message || rawMessage;
+      if (typeof detail === 'object') {
+        detail = detail.message || JSON.stringify(detail);
+      }
+    } catch {
+      // Keep the original message when the backend response is not JSON.
+    }
+
+    const lowerDetail = detail.toLowerCase();
+    if (detail.includes('429') || lowerDetail.includes('rate limit') || lowerDetail.includes('quota')) {
+      return `Lỗi 429 - API đã hết quota hoặc đang bị giới hạn lượt gọi. Chi tiết: ${detail}`;
+    }
+    if (detail.includes('401') || lowerDetail.includes('unauthorized') || lowerDetail.includes('invalid api key')) {
+      return `Lỗi 401 - GROQ_API_KEY không hợp lệ hoặc chưa được cấu hình trên Render. Chi tiết: ${detail}`;
+    }
+    if (detail.includes('404')) {
+      return `Lỗi 404 - Không tìm thấy model hoặc API endpoint. Chi tiết: ${detail}`;
+    }
+    if (lowerDetail.includes('failed to fetch')) {
+      return `Lỗi kết nối - Không gọi được backend Render. Chi tiết: ${detail}`;
+    }
+    return `Lỗi chatbot: ${detail}`;
+  };
+
   const handleSendMessage = async (text: string, clearHistory: boolean = false) => {
     if (apiKeyError) {
       setMessages(prev => [...prev, {
@@ -207,7 +237,7 @@ const App: React.FC = () => {
     } catch (error) {
       setMessages(prev => [...prev, {
         id: Date.now().toString(),
-        text: "Ôi, mạng bị lag rồi! Em thử hỏi lại thầy một lần nữa nhé. 😓",
+        text: getChatErrorMessage(error),
         sender: Sender.AI,
         timestamp: new Date(),
         isError: true
